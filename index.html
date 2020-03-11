@@ -4,28 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="https://use.fontawesome.com/9366a1d005.js"></script>
 </head>
 <body>
-    <header>
-        <ul>
-            <li><a href = "#home">Home</a></li>
-            <li><a href = "#nothome">Home</a></li>
-            <li><a href = "#home">Home</a></li>
-            <li><a href = "#home">Home</a></li>
+    <header class="top-bar">
+        <ul class="top-nav">
+            <li class="top-nav__link"><a href = "#home">Home</a></li>
+            <li class="top-nav__link"><a href = "#raport">Raporteaza o zona</a></li>
+            <li class="top-nav__link"><a href = "#statistici">Statistici</a></li>
+            <li class="top-nav__link"><a href = "#campanii">Creeaza o campanie</a></li>
+            <li class="top-nav__link"><a href = "#campaniiform.html">Campanii</a></li>
         </ul>
         <form>
             <label>
                 <span>Username</span>
-                <input type="text" name="username">
+                <br>
+                <input class="top-nav__text" type="text" name="username">
             </label>
             <label>
                 <span>Password</span>
-                <input type="password" name="password">
+                <br>
+                <input class="top-nav__text" type="password" name="password">
             </label>
             <button type="submit">LogIn</button>
         </form>
+        <div class = "user-profile">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <ul class = "user-options">
+                <li class = "user__option"><a href="#">View User Profile</a></li>
+                <li class = "user__option"><a href="#">Config Account</a></li>
+                <li class = "user__option"><a href="#">Log Out</a></li>
+            </ul>
+        </div>
     </header>
-
-    <footer></footer>
+    <div>
+        <section>
+            <img src="https://picsum.photos/200/300" alt="Some image for now" >
+            <h1>Some title here</h1>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at dignissim tellus. In hac habitasse platea dictumst. Praesent imperdiet sodales imperdiet. Nam ullamcorper purus et felis pharetra, sit amet finibus enim gravida. Aliquam sem diam, ultrices vel posuere a, sodales ut purus. Donec ultrices laoreet consequat. Nunc lacinia orci sit amet dolor feugiat, non maximus magna elementum. Suspendisse potenti. Donec tincidunt elementum tempus. Nam posuere ultrices leo, a egestas urna euismod vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam massa est, euismod ut dui porttitor, efficitur consequat tellus. Curabitur dapibus sed nisl vitae ornare.
+            </p>
+        </section>
+        <section>
+            <div>
+                <img src="https://picsum.photos/150/150" alt="some img alt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente rerum eligendi distinctio voluptates saepe ut aperiam similique provident, nostrum exercitationem doloribus est delectus pariatur, voluptatum placeat, perspiciatis quis neque voluptatem!</p>
+            </div>
+            <div>
+                <img src="https://picsum.photos/150/150" alt="some img alt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque porro voluptas dolorem similique tenetur quia ex est commodi ad magnam? Laboriosam pariatur dolorum odio, sunt hic possimus sapiente nihil iste.</p>
+            </div>
+            <div>
+                <img src="https://picsum.photos/150/150" alt="some img alt">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <img src="https://picsum.photos/150/150" alt="some img alt">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p> 
+                <a href="#readmore">Read more...</a>
+            </div>
+            <div>
+                <img src="https://picsum.photos/150/150" alt="some img alt">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p>
+                <a href="#readmore">Read more...</a>
+            </div>
+            <div>
+                <img src="https://picsum.photos/150/150" alt="some img alt">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p>
+                <a href="#readmore">Read more...</a>
+            </div>
+            <div>
+                <img src="https://picsum.photos/150/150" alt="some img alt">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p>
+                <a href="#readmore">Read more...</a>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        &copy; Teo's team 2020
+    </footer>
 </body>
 </html>
