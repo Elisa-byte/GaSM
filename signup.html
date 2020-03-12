@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inregistreaza_te</title>
+</head>
+<body>
+    <div>
+        <h3>Fa parte din echipa noastra!</h3>
+        <form method="POST">
+            <!--
+                nume, prenume, adresa, cetatean sau personal autorizat
+            -->
+            <label for="nume">Nume</label><br>
+            <input type="text" id="nume" name="nume"><br>
+            <label for="prenume">Prenume</label><br>
+            <input type="text" id="prenume" name="prenume"><br>
+            <label for="adresa">Alegeti judetul dumneavoastra: </label><br><!--partea cu select -->
+            <select id="adresa" name="adresa">
+                <option value="0" selected="selected">Alege...</option> <option value="42">Alba</option> <option value="1">Arad</option> <option value="2">Arges</option> <option value="3">Bacau</option> <option value="4">Bihor</option> <option value="5">Bistrita-Nasaud</option> <option value="6">Botosani</option> <option value="7">Braila</option> <option value="8">Brasov</option> <option value="9">BUCURESTI</option> <option value="10">Buzau</option> <option value="11">Calarasi</option> <option value="12">Caras-Severin</option> <option value="13">Cluj</option> <option value="14">Constanta</option> <option value="15">Covasna</option> <option value="16">Dambovita</option> <option value="17">Dolj</option> <option value="18">Galati</option> <option value="19">Giurgiu</option> <option value="20">Gorj</option> <option value="21">Harghita</option> <option value="22">Hunedoara</option> <option value="23">Ialomita</option> <option value="24">Iasi</option> <option value="25">Ilfov</option> <option value="26">Maramures</option> <option value="27">Mehedinti</option> <option value="28">Mures</option> <option value="29">Neamt</option> <option value="30">Olt</option> <option value="31">Prahova</option> <option value="32">Salaj</option> <option value="33">Satu Mare</option> <option value="34">Sibiu</option> <option value="35">Suceava</option> <option value="36">Teleorman</option> <option value="37">Timis</option> <option value="38">Tulcea</option> <option value="39">Valcea</option> <option value="40">Vaslui</option> <option value="41">Vrancea</option>
+            </select><br>
+            <label for="persoana">Persoana</label><br>
+            <select id="persoana" name="persoana"><br>
+               <option value="0" selected="selectPerson">Alege...</option>
+               <option value="1">Cetatean</option>
+               <option value="2">Personal autorizat</option>
+            </select><br>
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email"><br>
+            <label for="username">Nume de utilizator</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Parola</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <!-- de pus "show password"-->
+            <ul>
+                <li>Minimumul lungimii parolei de 8 caractere</li>
+                <li>Macar o litere mare</li>
+                <li>Macar o litere mica</li>
+                <li>Macar o cifra</li>
+            </ul>
+            <input type="submit" value="Inregistrati-va"><br>
+            <label for="signup">Aveti deja cont?  </label> 
+            <button type="button"> Autentifica-te</button><br>
+            <label>Prin apasarea butonul "Inregistrati-va", sunteti de acord cu crearea unui cont GaSM si sunteti de acord cu <em>Termeni si conditii</em> si <em>
+                Politica de confidentialitate</em></label> 
+                <p>&copy; 2020 GaSM.com<p>
+        </form>
+    </div>
+</body>
+</html>
