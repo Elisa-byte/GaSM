@@ -8,9 +8,6 @@
     display: inline;
 }
 
-.user-profile {
-    position: relative;
-}
 .user-options {
     position: absolute;
 }
@@ -20,7 +17,7 @@
 }
 
 .user-profile {
-    display: relative;
+    position: relative;
     width: 5em;
     height: 5em;
     /* justify-content: center;
@@ -28,4 +25,11 @@
     border: 2px solid black;    
 }
 
-
+.user-profile i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
