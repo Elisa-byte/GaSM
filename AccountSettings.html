@@ -3,12 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/GaSM/JavaScript/viewPassword.js"></script>
     <title>AccountSettings</title>
 </head>
 <body>
     <div id="profile_settings">
-        
-
+        <form action="/my-account-settings-page" method="post">
+            <fieldset>
+                <legend>Setari profil</legend>
+                <p class="profile_settings_avatar_image">
+                  <img src="https://www.publicdomainpictures.net/pictures/270000/nahled/avatar-people-person-business-u.jpg" alt="Avatar" class="image_avatar_settings_profile" style="width:10vw">
+                  <label for="profile_settings_avatar_image">Schimba-ti imaginea de profil</label>
+                  <input type="file" id="profile_settings_avatar_image" name="profile_settings_avatar_image" accept="image/*">
+                </p>
+                <p class="profile_settings_company">
+                    <label for="profile_settings_company">Numele companiei</label><br>
+                    <input type="text" id="profile_settings_company" name="profile_settings_company">
+                </p>
+                <p class="profile_settings">
+                    <label for="profile_settings">Nume</label><br>
+                    <input type="text" id="profile_settings_nume" name="profile_settings_nume" placeholder="Becali"><br>
+                    <label for="profile_settings">Prenume</label><br>
+                    <input type="text" id="profile_settings_nume" name="profile_settings_prenume" placeholder="Gigi"><br>
+                    <label for="profile_settings">Email</label><br>
+                    <input type="text" id="profile_settings_nume" name="profile_settings_email"><br>
+                    <label for="profile_settings">Password</label><br>
+                    <input type="password" name="profile_settings_password" id="profile_settings_password"><input type="checkbox" onclick="myFunction()">Arata parola<br>
+                    <label for="profile_settings">Nume de utilizator</label><br>
+                    <input type="text" id="profile_settings_usernume" name="profile_settings_usernume"><br>
+                </p>
+                <p class="confirmation_settings_profile">
+                    <input type="password" id="profile_settings_confirmation" name="profile_settings_confirmation" placeholder="Introduceti parola contului">
+                    <button for="profile_settings">Salvare modificari</button>
+                </p>
+              </fieldset>
+        </form>
     </div>
 </body>
 </html>
