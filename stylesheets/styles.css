@@ -1,3 +1,7 @@
+
+body {
+    margin: 0;
+}
 .top-bar {
     display: flex;
     background-color: green;
@@ -9,27 +13,42 @@
 }
 
 .user-options {
+    list-style-type: none;
     position: absolute;
+    width: auto;
+    height: auto;
+    border: 2px solid black;
+    top: 5em;
+    right: 0.5em;
+     display: none; 
+    padding-left: 0;
+
 }
+
 
 .top-nav__text {
     width: 10em;
 }
 
 .user-profile {
-    position: relative;
+    display: flex;
     width: 5em;
     height: 5em;
-    /* justify-content: center;
-    align-content: center; */
-    border: 2px solid black;    
+    justify-content: center;
+    align-items: center;
 }
 
-.user-profile i {
+.user-profile i:hover + .user-options {
+    display: block;
+}
+
+#arrowup {
+    width: 0;
+    height: 0;
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.5em solid rgb(63, 13, 13);
+    margin-left: 80%; 
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    top: -0.5em;
 }
