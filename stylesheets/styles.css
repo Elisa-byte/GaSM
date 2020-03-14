@@ -1,4 +1,7 @@
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 body {
     margin: 0;
 }
@@ -12,20 +15,6 @@ body {
     display: inline;
 }
 
-.user-options {
-    list-style-type: none;
-    position: absolute;
-    width: auto;
-    height: auto;
-    border: 2px solid black;
-    top: 5em;
-    right: 0.5em;
-     display: none; 
-    padding-left: 0;
-
-}
-
-
 .top-nav__text {
     width: 10em;
 }
@@ -36,11 +25,43 @@ body {
     height: 5em;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.user-profile p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.user-profile i:hover + .user-options {
+.user-options {
+    list-style-type: none;
+    position: absolute;
+    width: 150%;
+    text-align: right;
+    height: auto;
+    /* border: 2px solid black; */
+    top: 100%;
+    right: 0;
+    margin: 0;
+    display: none;
+    padding-left: 0;
+    background-color: lawngreen;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+
+
+}.user-options:hover {
     display: block;
 }
+
+.user-profile p:hover + .user-options {
+    display: block;
+}
+/* 
+.user__option {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+} */
 
 #arrowup {
     width: 0;
