@@ -1,3 +1,4 @@
+/* TOP NAVIGATION */
 a {
     text-decoration: none;
     color: inherit;
@@ -5,42 +6,40 @@ a {
 body {
     margin: 0;
 }
-
-
 .top-bar {
     display: flex;
-    background-color: rgb(177, 86, 1);
+    background-color: #420601;
     justify-content: flex-end;
+    color: white;
 }
 
- 
 #top-bar__logo {
     height: 4.5em;
     margin: 0;
 }
-
 .top-nav__link {
     display: inline-block;
     font-size: 1.3em;
     padding: 0.5em;
-    transition: border-bottom 0.5;
-
+    transition: 0.5s;
+    border-radius: 0.2em;
 }
 .top-nav__link:hover {
-    border-bottom: 2px solid black;
-}
 
-.top-nav__text {
-    width: 10em;
+    background-color: rgb(204, 154, 108);
 }
-
+.top-nav__login input {
+    border-radius: 1em;
+    border: 1px solid rgb(100, 100, 100);
+    margin: 0.1em;
+    padding: 0.2em;
+}
 .top-nav {
     padding: 0;
     margin-left: auto;
     height: 100%;
     margin-right: 1em;
 }
-
 .user-profile {
     display: flex;
     width: 5em;
@@ -56,7 +55,6 @@ body {
     width: 100%;
     height: 100%;
 }
-
 .user-options {
     list-style-type: none;
     position: absolute;
@@ -77,18 +75,18 @@ body {
 }.user-options:hover {
     display: block;
 }
-
 .user-profile p:hover + .user-options {
     display: block;
 }
- 
 .user__option {
  
     width: 100%;
     padding: 1em;
     left: 0;
 } 
-
+.user__option:hover {
+    background-color: rgb(63, 38, 38);
+}
 #arrowup {
     width: 0;
     height: 0;
@@ -98,4 +96,37 @@ body {
     margin-left: 80%; 
     position: absolute;
     top: -0.5em;
+}
+/* HOME CONTENT */
+
+.main-content {
+    width: 75%;
+    margin: 5em auto 1em;
+    position: relative;
+}
+.main-content > * {
+    margin: 5em 0 5em 0 ;
+}
+
+#home-intro {
+    display: flex;
+    align-items: center;
+
+}
+#home-intro__image {
+    width: 40%;
+    /* min-width: 540px;
+    max-height: 180px; */
+}
+#home-qa > * {
+    display: flex;
+    align-items: center;
+}
+#home-qa > :nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.home-qa__image {
+    margin: 1em;
 }
