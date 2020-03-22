@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logheaza_te</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/styles.css"> -->
+    <title>Logheaza-te</title>
 </head>
+
 <body>
-    <div>
-        <form method="POST">
-            <label for="username">Nume utilizator</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Parola</label><br>
-            <input type="password" id="password" name="password"><br><br>
-            <input type="submit" value="Logare"><br>
-            <label for="signup">Nu aveti cont?  </label> 
-            <button type="button"> Inregistrati-va</button><br>
-            <label><strong>Am uitat parola!</strong></label><!-- trimitere la pg recuperarii parolei-->
-        </form>
+    <div class="main-content">
+        <div class="container-login">
+            <div class="wrap-login">
+                <form class="form-login" method="POST">
+                    <span class="form-login-logo">
+                        <i class="form-login-logo-img">
+                        </i>
+                    </span>
+                    <span class="form-login-title">
+                        Inregistreaza-te
+                    </span>
+                    <div class="form-login-input" data-validate="Introduceti numele de utilizator">
+                        <input class="form-login-input-username" type="text" name="username" placeholder="Nume utilizator">
+                    </div>
+                    <div class="form-login-input" data-validate="Introduceti parola">
+                        <input class="form-login-input-password" type="password" name="password" placeholder="Parola">
+                    </div>
+                    <div class="form-login-remember-me">
+                        <input class="input-checkbox-remember-me" id="login-chk" type="checkbox" name="Tine-ma minte">
+                        <label class="label-checkbox-remember-me" for="login-chk">
+                            Tine-ma minte
+                        </label>
+                    </div>
+                    <div class="form-login-button">
+                        <button class="form-login-button-submit">
+                            Login
+                        </button>
+                    </div>
+                    <div class="form-login-forgot-password">
+                        <a class="forgot-password" href="#">
+                            V-ati uitat parola?
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
