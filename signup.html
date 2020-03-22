@@ -1,50 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheets/signup.css">
     <title>Inregistreaza_te</title>
 </head>
+
 <body>
-    <div>
-        <h3>Fa parte din echipa noastra!</h3>
-        <form method="POST">
-            <label for="nume">Nume</label><br>
-            <input type="text" id="nume" name="nume"><br>
-            <label for="prenume">Prenume</label><br>
-            <input type="text" id="prenume" name="prenume"><br>
-            <label for="adresa">Alegeti judetul dumneavoastra: </label><br><!--partea cu select -->
-            <select id="adresa" name="adresa">
-                <option value="0" selected="selected">Alege...</option> <option value="42">Alba</option> <option value="1">Arad</option> <option value="2">Arges</option> <option value="3">Bacau</option> <option value="4">Bihor</option> <option value="5">Bistrita-Nasaud</option> <option value="6">Botosani</option> <option value="7">Braila</option> <option value="8">Brasov</option> <option value="9">BUCURESTI</option> <option value="10">Buzau</option> <option value="11">Calarasi</option> <option value="12">Caras-Severin</option> <option value="13">Cluj</option> <option value="14">Constanta</option> <option value="15">Covasna</option> <option value="16">Dambovita</option> <option value="17">Dolj</option> <option value="18">Galati</option> <option value="19">Giurgiu</option> <option value="20">Gorj</option> <option value="21">Harghita</option> <option value="22">Hunedoara</option> <option value="23">Ialomita</option> <option value="24">Iasi</option> <option value="25">Ilfov</option> <option value="26">Maramures</option> <option value="27">Mehedinti</option> <option value="28">Mures</option> <option value="29">Neamt</option> <option value="30">Olt</option> <option value="31">Prahova</option> <option value="32">Salaj</option> <option value="33">Satu Mare</option> <option value="34">Sibiu</option> <option value="35">Suceava</option> <option value="36">Teleorman</option> <option value="37">Timis</option> <option value="38">Tulcea</option> <option value="39">Valcea</option> <option value="40">Vaslui</option> <option value="41">Vrancea</option>
-            </select><br>
-            <label for="persoana">Persoana</label><br>
-            <select id="persoana" name="persoana"><br>
-               <option value="0" selected="selectPerson">Alege...</option>
-               <option value="1">Cetatean</option>
-               <option value="2">Personal autorizat</option>
-            </select><br>
-            <label for="Numar de contact">Numar de telefon</label><br>
-            <input type="number" id="telefon" name="telefon"><br>
-            <label for="email">Email</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="username">Nume de utilizator</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Parola</label><br>
-            <input type="password" id="password" name="password"><br><br>
-            <!-- de pus "show password"-->
-            <ul>
-                <li>Minimumul lungimii parolei de 8 caractere</li>
-                <li>Macar o litere mare</li>
-                <li>Macar o litere mica</li>
-                <li>Macar o cifra</li>
-            </ul>
-            <input type="submit" value="Inregistrati-va"><br>
-            <label for="signup">Aveti deja cont?  </label> 
-            <button type="button"> Autentifica-te</button><br>
-            <label>Prin apasarea butonul "Inregistrati-va", sunteti de acord cu crearea unui cont GaSM si sunteti de acord cu <em>Termeni si conditii</em> si <em>
-                Politica de confidentialitate</em></label> 
-                <p>&copy; 2020 GaSM.com<p>
-        </form>
+    <div class="main-content">
+        <div class="container-signup">
+            <div class="wrap-signup">
+                <form class="form-signup" method="POST">
+                    <span class="form-signup-logo">
+                        <i class="form-signup-logo-img"></i>
+                    </span>
+                    <span class="form-signup-title">Fa parte din echipa noastra!</span>
+                    <div class="form-signup-input" data-validate="Introduceti numele dumneavoastra">
+                        <input class="form-signup-input-" type="text" name="name" placeholder="Nume">
+                        <span class="form-signup-span" data-placeholder="😃‍"></span>
+                        <!-- </div>
+                    <div class="form-signup-input" data-validate="Introduceti prenumele dumneavoastra"> -->
+                        <input class="form-signup-input-" type="text" name="prename" placeholder="Prenume">
+                        <span class="form-signup-span" data-placeholder="😃‍"></span>
+                    </div>
+                    <div class="form-signup-input" data-validate="Introduceti numarul dumneavoastra de telefon">
+                        <input class="form-signup-input-" type="text" name="phone" placeholder="Numarul de telefon">
+                        <span class="form-signup-span" data-placeholder="📞‍"></span>
+                        <!-- </div>
+                    <div class="form-signup-input" data-validate="Introduceti emailul dumneavoastra"> -->
+                        <input class="form-signup-input-" type="text" name="phone" placeholder="Email">
+                        <span class="form-signup-span" data-placeholder="📩"></span>
+                    </div>
+                    <div class="form-signup-input" data-validate="Introduceti locatia dumneavoastra">
+                        <span class="form-signup-span" data-placeholder="🌍‍"></span>
+                        <select id="custom-select-address" name="adresa">
+                            <option value="0" selected="selected">Alege...</option> <option value="42">Alba</option> <option value="1">Arad</option> <option value="2">Arges</option> <option value="3">Bacau</option> <option value="4">Bihor</option> <option value="5">Bistrita-Nasaud</option> <option value="6">Botosani</option> <option value="7">Braila</option> <option value="8">Brasov</option> <option value="9">BUCURESTI</option> <option value="10">Buzau</option> <option value="11">Calarasi</option> <option value="12">Caras-Severin</option> <option value="13">Cluj</option> <option value="14">Constanta</option> <option value="15">Covasna</option> <option value="16">Dambovita</option> <option value="17">Dolj</option> <option value="18">Galati</option> <option value="19">Giurgiu</option> <option value="20">Gorj</option> <option value="21">Harghita</option> <option value="22">Hunedoara</option> <option value="23">Ialomita</option> <option value="24">Iasi</option> <option value="25">Ilfov</option> <option value="26">Maramures</option> <option value="27">Mehedinti</option> <option value="28">Mures</option> <option value="29">Neamt</option> <option value="30">Olt</option> <option value="31">Prahova</option> <option value="32">Salaj</option> <option value="33">Satu Mare</option> <option value="34">Sibiu</option> <option value="35">Suceava</option> <option value="36">Teleorman</option> <option value="37">Timis</option> <option value="38">Tulcea</option> <option value="39">Valcea</option> <option value="40">Vaslui</option> <option value="41">Vrancea</option>
+                        </select>
+                    </div>
+                    <div class="form-signup-input" data-validate="Introduceti categoria dumneavoastra">
+                        <span class="form-signup-span" data-placeholder="🤡"></span>
+                        <select id="custom-select-category" name="category">
+                            <option value="0" selected="selected">Alege...</option>
+                            <option value="1">Cetatean</option>
+                            <option value="2">Personal autorizat</option>
+                    </div>
+                    <!-- foloseste flex-wrap -->
+                    <div class="form-signup-input" data-validate="Introduceti usernameul dumneavoastra">
+                        <input class="form-signup-input-" type="text" name="phone" placeholder="Username">
+                        <span class="form-signup-span" data-placeholder="🤩‍"></span>
+                    </div>
+                    <div class="form-signup-input" data-validate="Introduceti parola">
+                        <input class="form-signup-input-" type="password" name="password" placeholder="Parola">
+                        <span class="form-signup-span" data-placeholder="🧷"></span>
+                    </div>
+                    <!-- de pus "show password"-->
+                    <div class="form-signup-respectare" data-validate="Respectati">
+                    <ul class="requests">
+                        <li>Minimumul lungimii parolei de 8 caractere</li>
+                        <li>Macar o litere mare</li>
+                        <li>Macar o litere mica</li>
+                        <li>Macar o cifra</li>
+                    </ul>
+                    </div>
+                    <div class="form-signup-button">
+                        <button class="form-signup-button-submit" type="submit">Inregistrati-va</button>
+                    </div>
+                    <div class="form-signup-already-a-user">
+                        <a class="already-a-user" href="#">Aveti deja cont?</a>
+                    </div> 
+                    <div class="accept-all" data-validate="accept-all"></div>
+                       <label class="accept-all-attention" for="">Prin apasarea butonul "Inregistrati-va", sunteti 
+                           de acord cu crearea unui cont GaSM si sunteti de acord cu <a class="termeni-conditii" href="#">Termeni si conditii</a> si 
+                           <a class="politica-de-confidentialitate" href="#">Politica de confidentialitate</a></label>
+                       <p class="accept-all-copy-rights">&copy; 2020 GaSM.com</p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>

@@ -23,8 +23,8 @@ html {
     background-color: #fff;
 }
 
-.container-login {
-    background-image: url("../img/logo-dark.PNG");
+.container-signup {
+    background-image: url("../img/logo-white.PNG");
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -39,7 +39,7 @@ html {
     z-index: 1;
 }
 
-.container-login::before {
+.container-signup::before {
     content: "";
     display: block;
     position: absolute;
@@ -48,7 +48,7 @@ html {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 *,
@@ -57,26 +57,26 @@ html {
     box-sizing: inherit;
 }
 
-.wrap-login {
-    width: 500px;
+.wrap-signup {
+    width: 700px;
+    /*marime box formular*/
     border-radius: 3px;
     overflow: hidden;
     padding: 40px 40px 27px 40px;
-    background-color: rgba(30, 83, 9, 0.5);
-    /* background-image: linear-gradient(top, #074404e1, #855e25); */
+    background-color: rgba(65, 68, 64, 0.7);
 }
 
 @media (max-width: 576px) {
-    .wrap-login {
-        padding: 55px 15px 37px 15px;
+    .wrap-signup {
+        padding: 45px 15px 27px 15px;
     }
 }
 
-.form-login {
+.form-signup {
     width: 100%;
 }
 
-.form-login-logo {
+.form-signup-logo {
     font-size: 60px;
     color: #fff;
     display: flex;
@@ -88,7 +88,7 @@ html {
     margin: 0 auto;
 }
 
-.form-login-logo-img {
+.form-signup-logo-img {
     background-image: url("../img/logo2-dark.png.PNG");
     max-width: 100%;
     max-height: 100%;
@@ -97,7 +97,7 @@ html {
     font-size: inherit;
 }
 
-.form-login-title {
+.form-signup-title {
     font-size: 30px;
     color: #6e3f14;
     line-height: 1.2;
@@ -107,7 +107,7 @@ html {
     display: block;
 }
 
-.form-login-input {
+.form-signup-input {
     position: relative;
     width: 100%;
     border-bottom: 5px solid rgba(255, 255, 255, 0.5);
@@ -119,7 +119,7 @@ html {
     opacity: 0.7;
 }
 
-.form-login-input- {
+.form-signup-input- {
     font-size: 16px;
     color: white;
     line-height: 1.2;
@@ -130,7 +130,7 @@ html {
     padding: 0 5px 0 38px;
 }
 
-.form-login-span {
+.form-signup-span {
     position: absolute;
     display: block;
     width: 100%;
@@ -140,7 +140,7 @@ html {
     pointer-events: none;
 }
 
-.form-login-span::before {
+.form-signup-span::before {
     content: "";
     display: block;
     position: absolute;
@@ -155,7 +155,7 @@ html {
     background: #fff;
 }
 
-.form-login-span::after {
+.form-signup-span::after {
     font-size: 22px;
     color: #fff;
     content: attr(data-placeholder);
@@ -174,122 +174,4 @@ html {
 html {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-}
-
-input {
-    outline: none;
-    border: none;
-    overflow: visible;
-    touch-action: manipulation;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    color: black;
-    text-align: start;
-}
-
-.form-login-remember-me {
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 35px;
-}
-
-input[type=checkbox] {
-    box-sizing: border-box;
-    padding: 0;
-}
-
-input[type="checkbox" i] {
-    background-color: initial;
-    cursor: default;
-    -webkit-appearance: checkbox;
-}
-
-.input-checkbox-remember-me {
-    display: none;
-}
-
-.label-checkbox-remember-me {
-    font-size: 13px;
-    color: #6e3f14;
-    font-size: 13px;
-    line-height: 1.2;
-    display: block;
-    position: relative;
-    padding-left: 26px;
-    cursor: pointer;
-}
-
-.label-checkbox-remember-me::before {
-    content: "\f26b";
-    font-size: 13px;
-    color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 2px;
-    background: #fff;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-label {
-    margin: 0;
-    display: inline-block;
-    margin-bottom: .5rem;
-}
-
-.form-login-button {
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.form-login-button-submit {
-    font-size: 16px;
-    color: #555555;
-    line-height: 1.2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-    min-width: 120px;
-    height: 50px;
-    border-radius: 25px;
-}
-
-button {
-    outline: none;
-    border: none;
-    text-transform: none;
-    overflow: visible;
-    margin: 0;
-    touch-action: manipulation;
-}
-
-.form-login-forgot-password {
-    padding-top: 50px;
-    text-align: center;
-}
-
-.forgot-password {
-    font-size: 16px;
-    color: white;
-    line-height: 1.2;
-}
-
-a {
-    margin: 0;
-    -webkit-transition: all 0.4s;
-    text-decoration: none;
-    background-color: transparent;
-    touch-action: manipulation;
 }
