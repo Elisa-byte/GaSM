@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,16 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <script src="https://use.fontawesome.com/9366a1d005.js"></script>
 </head>
+
 <body>
     <header class="top-bar">
-        <a href="index.html"><img src="img/logo-white.PNG" alt="GaSM Logo" id="top-bar__logo"></a> 
+        <a href="index.html" id="top-bar__logo-container"><img src="img/logo-white.PNG" alt="GaSM Logo" id="top-bar__logo"></a>
         <ul class="top-nav">
-            <li class="top-nav__link"><a href = "#home">Home</a></li>
-            <li class="top-nav__link"><a href = "#raport">Raporteaza o zona</a></li>
-            <li class="top-nav__link"><a href = "#statistici">Statistici</a></li>
-            <li class="top-nav__link"><a href = "#campanii">Creeaza o campanie</a></li>
-            <li class="top-nav__link"><a href = "#campaniiform.html">Campanii</a></li>
+            <li class="top-nav__link"><a href="index.html">Home</a></li>
+            <li class="top-nav__link"><a href="FormularRaportare.html">Raporteaza o zona</a></li>
+            <li class="top-nav__link"><a href="#statistici">Statistici</a></li>
+            <li class="top-nav__link"><a href="FormularCampanie.html">Creeaza o campanie</a></li>
+            <li class="top-nav__link"><a href="#campaniiform.html">Campanii</a></li>
         </ul>
         <form class="top-nav__login">
             <label>
@@ -30,24 +32,27 @@
             </label>
             <button type="submit" hidden>LogIn</button>
         </form>
-        <div class = "user-profile">
-            <p><i class="fa fa-user-circle" aria-hidden="true"></i></p>
-            <ul class = "user-options">
-                <div id = "arrowup"></div>
-                <li class = "user__option"><a href="#">View User Profile</a></li>
-                <li class = "user__option"><a href="#">Config Account</a></li>
-                <li class = "user__option"><a href="#">Log Out</a></li>
+        <div class="user-profile">
+            <p><i id="mobile-menu" class="fa fa-bars"></i></p>
+            <p><i id="profile-button" class="fa fa-user-circle" aria-hidden="true"></i></p>
+            <ul class="user-options">
+                <div id="arrowup"></div>
+                <li class="user__option"><a href="#">View User Profile</a></li>
+                <li class="user__option"><a href="#">Config Account</a></li>
+                <li class="user__option"><a href="#">Log Out</a></li>
             </ul>
         </div>
     </header>
     <main class="main-content">
         <section id="home-intro">
-            <img id="home-intro__image"src="img/logo2-dark.PNG" alt="Some image for now" >
+            <img id="home-intro__image" src="img/logo2-dark.PNG" alt="Some image for now">
             <div>
                 <h1>Some title here</h1>
-                 <p>
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at dignissim tellus. In hac habitasse platea dictumst. Praesent imperdiet sodales imperdiet. Nam ullamcorper purus et felis pharetra, sit amet finibus enim gravida. Aliquam sem diam, ultrices vel posuere a, sodales ut purus. Donec ultrices laoreet consequat. Nunc lacinia orci sit amet dolor feugiat, non maximus magna elementum. Suspendisse potenti. Donec tincidunt elementum tempus. Nam posuere ultrices leo, a egestas urna euismod vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam massa est, euismod ut dui porttitor, efficitur consequat tellus. Curabitur dapibus sed nisl vitae ornare.
-                 </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at dignissim tellus. In hac habitasse platea dictumst. Praesent imperdiet sodales imperdiet. Nam ullamcorper purus et felis pharetra, sit amet finibus enim gravida. Aliquam sem diam,
+                    ultrices vel posuere a, sodales ut purus. Donec ultrices laoreet consequat. Nunc lacinia orci sit amet dolor feugiat, non maximus magna elementum. Suspendisse potenti. Donec tincidunt elementum tempus. Nam posuere ultrices leo, a egestas
+                    urna euismod vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam massa est, euismod ut dui porttitor, efficitur consequat tellus. Curabitur dapibus sed nisl vitae ornare.
+                </p>
             </div>
         </section>
         <section id="home-qa">
@@ -55,49 +60,62 @@
                 <img class="home-qa__image" src="https://picsum.photos/150/150" alt="some img alt">
                 <div>
                     <h1>Question1</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente rerum eligendi distinctio voluptates saepe ut aperiam similique provident, nostrum exercitationem doloribus est delectus pariatur, voluptatum placeat, perspiciatis quis neque voluptatem!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente rerum eligendi distinctio voluptates saepe ut aperiam similique provident, nostrum exercitationem doloribus est delectus pariatur, voluptatum placeat, perspiciatis
+                        quis neque voluptatem!</p>
                 </div>
             </div>
             <div>
                 <img class="home-qa__image" src="https://picsum.photos/150/150" alt="some img alt">
                 <div>
                     <h1>Question2</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente rerum eligendi distinctio voluptates saepe ut aperiam similique provident, nostrum exercitationem doloribus est delectus pariatur, voluptatum placeat, perspiciatis quis neque voluptatem!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente rerum eligendi distinctio voluptates saepe ut aperiam similique provident, nostrum exercitationem doloribus est delectus pariatur, voluptatum placeat, perspiciatis
+                        quis neque voluptatem!</p>
                 </div>
             </div>
             <div>
                 <img class="home-qa__image" src="https://picsum.photos/150/150" alt="some img alt">
                 <div>
                     <h1>Question3</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente rerum eligendi distinctio voluptates saepe ut aperiam similique provident, nostrum exercitationem doloribus est delectus pariatur, voluptatum placeat, perspiciatis quis neque voluptatem!</p>
-                </div>         
-           </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente rerum eligendi distinctio voluptates saepe ut aperiam similique provident, nostrum exercitationem doloribus est delectus pariatur, voluptatum placeat, perspiciatis
+                        quis neque voluptatem!</p>
+                </div>
+            </div>
         </section>
-        <section>
-            <div>
-                <img src="https://picsum.photos/150/150" alt="some img alt">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p> 
-                <a href="#readmore">Read more...</a>
-            </div>
-            <div>
-                <img src="https://picsum.photos/150/150" alt="some img alt">
+        <section id="campaigns-preview">
+            <h1 class="section-title">Campaniile noastre</h1>
+            <div class="campanie__preview">
+                <!-- <img src="https://picsum.photos/150/150" alt="some img alt"> -->
+                <h2>Nume Campanie</h2>
+                <div class="overlay"></div>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p>
                 <a href="#readmore">Read more...</a>
             </div>
-            <div>
-                <img src="https://picsum.photos/150/150" alt="some img alt">
+            <div class="campanie__preview">
+                <!-- <img src="https://picsum.photos/150/150" alt="some img alt"> -->
+                <div class="overlay"></div>
+                <h2>Nume Campanie</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p>
                 <a href="#readmore">Read more...</a>
             </div>
-            <div>
-                <img src="https://picsum.photos/150/150" alt="some img alt">
+            <div class="campanie__preview">
+                <!-- <img src="https://picsum.photos/150/150" alt="some img alt"> -->
+                <div class="overlay"></div>
+                <h2>Nume Campanie</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p>
+                <a href="#readmore">Read more...</a>
+            </div>
+            <div class="campanie__preview">
+                <!-- <img src="https://picsum.photos/150/150" alt="some img alt"> -->
+                <div class="overlay"></div>
+                <h2>Nume Campanie</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, porro labore. Mollitia, iure necessitatibus at voluptate eveniet perspiciatis nemo atque, neque tempora velit quidem fugiat expedita nostrum! Ex, fuga eum.</p>
                 <a href="#readmore">Read more...</a>
             </div>
         </section>
     </main>
     <footer class="footer">
-        &copy; Teo's team 2020
+        &copy; GaSM enterprise. inc
     </footer>
 </body>
+
 </html>
