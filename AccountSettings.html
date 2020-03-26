@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/GaSM/JavaScript/viewPassword.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/accountSettings.css">
     <title>AccountSettings</title>
 </head>
+
 <body>
     <div id="profile_settings">
         <form action="/my-account-settings-page" method="post">
             <fieldset>
                 <legend>Setari profil</legend>
                 <p class="profile_settings_avatar_image">
-                  <img src="https://www.publicdomainpictures.net/pictures/270000/nahled/avatar-people-person-business-u.jpg" alt="Avatar" class="image_avatar_settings_profile" style="width:10vw">
-                  <label for="profile_settings_avatar_image">Schimba-ti imaginea de profil</label>
-                  <input type="file" id="profile_settings_avatar_image" name="profile_settings_avatar_image" accept="image/*">
+                    <img src="https://www.publicdomainpictures.net/pictures/270000/nahled/avatar-people-person-business-u.jpg" alt="Avatar" class="image_avatar_settings_profile" style="width:10vw">
+                    <label for="profile_settings_avatar_image">Schimba-ti imaginea de profil</label>
+                    <input type="file" id="profile_settings_avatar_image" name="profile_settings_avatar_image" accept="image/*">
                 </p>
                 <p class="profile_settings_company">
                     <label for="profile_settings_company">Numele companiei</label><br>
@@ -36,8 +39,9 @@
                     <input type="password" id="profile_settings_confirmation" name="profile_settings_confirmation" placeholder="Introduceti parola contului">
                     <button for="profile_settings">Salvare modificari</button>
                 </p>
-              </fieldset>
+            </fieldset>
         </form>
     </div>
 </body>
+
 </html>
