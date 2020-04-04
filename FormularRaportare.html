@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/GaSM/JavaScript/viewPassword.js"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheets/raport.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/login.css">
     <script src="https://use.fontawesome.com/9366a1d005.js"></script>
@@ -18,7 +17,7 @@
 <body>
     <header class="top-bar">
         <a href="index.html" id="top-bar__logo-container"><img src="img/logo-white.PNG" alt="GaSM Logo" id="top-bar__logo"></a>
-        <h2 class="title-raport">Raportare a depozitului ilegal de gunoi </h2>
+        <h2 class="form-title">Raportare a depozitului ilegal de gunoi </h2>
 
         <div class="user-profile">
             <p><i id="mobile-menu" class="fa fa-bars"></i></p>
@@ -31,13 +30,13 @@
         </div>
     </header>
 
-    <div class="main-content-report">
+    <div class="main-content">
         <div class="container-report">
             <div class="wrap-report">
                 <div class="card-4 ">
                     <div class="testbox">
                         <!-- <form onsubmit="return validateForm()> -->
-                        <form action="/" class="form-report" name="FormularRaportare" method="POST">
+                        <form action="/" class="form-login" name="FormularRaportare" method="POST">
                             <h1>Raportare a depozitului ilegal de gunoi</h1>
                             <div>
                                 <h4>Ati observat dumneavoastra acest incident?</h4>
@@ -84,8 +83,8 @@
                                 <div class="question-answer">
                                     <label><input type="radio" value="none" name="impressed" />Masina</label>
                                     <label><input type="radio" value="none" name="impressed" />Remorca</label>
+                                    <label><input type="radio" value="none" name="impressed" />Aruncate din masini de mare tonaj</label></br>
                                     <label class="box-message">Placutele de inmatriculare ale masinii/remorcii<input class="box-message" type="text" placeholder="ex: VS123AAA" name="impressed" /></label>
-                                    <label><input type="radio" value="none" name="impressed" />Aruncate din masini de mare tonaj</label>
                                 </div>
                             </div>
                             <div>
@@ -101,11 +100,15 @@
                             </div>
                             <div>
                                 <h4>What do you like about the product / service?</h4>
-                                <textarea rows="5"></textarea>
+                                <div class="question-answer">
+                                    <textarea rows="3"></textarea>
+                                </div>
                             </div>
                             <div>
                                 <h4>What do you like about the product / service?</h4>
-                                <textarea rows="5"></textarea>
+                                <div class="question-answer">
+                                    <textarea rows="3"></textarea>
+                                </div>
                             </div>
                             <div>
                                 <h4>Compared to similar products offered by other companies, how do you consider our product?</h4>
@@ -139,11 +142,15 @@
                                 </div>
                             </div>
                             <div>
-                                <div id="map"></div>
-                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap "></script>
+                                <div class="question-answer">
+                                    <div id="map"></div>
+                                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap "></script>
+                                </div>
                             </div>
-                            <div class="btn-block">
-                                <button type="submit">Trimiteti formularul</button>
+                            <div class="question-answer">
+                                <div class="btn-block">
+                                    <button type="submit">Trimiteti formularul</button>
+                                </div>
                             </div>
                         </form>
                     </div>
