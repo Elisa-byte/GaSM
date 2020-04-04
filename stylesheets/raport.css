@@ -51,6 +51,7 @@ div {
     background-size: cover;
     position: relative;
     z-index: 1;
+    padding-top: 50px;
 }
 
 .container-report::before {
@@ -72,6 +73,7 @@ div {
 }
 
 .card-4 {
+    padding-top: 10px;
     background-color: rgba(247, 247, 247, 0.65);
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .15);
 }
