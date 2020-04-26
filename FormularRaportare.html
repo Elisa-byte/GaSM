@@ -15,20 +15,58 @@
 </head>
 
 <body>
+    <input type="checkbox" id="overlay-checkbox" />
+    <div id="overlay-menu">
+        <ul class="top-nav--overlayed">
+            <li class="top-nav__link--overlayed"><a href="index.html">Home</a></li>
+            <li class="top-nav__link--overlayed"><a href="FormularRaportare.html">Raporteaza o zona</a></li>
+            <li class="top-nav__link--overlayed"><a href="#statistici">Statistici</a></li>
+            <li class="top-nav__link--overlayed"><a href="FormularCampanie.html">Creeaza o campanie</a></li>
+            <li class="top-nav__link--overlayed"><a href="#campaniiform.html">Campanii</a></li>
+            <li class="top-nav__link--overlayed"><a href="#">View User Profile</a></li>
+            <li class="top-nav__link--overlayed"><a href="#">Config Account</a></li>
+            <li class="top-nav__link--overlayed"><a href="#">Log Out</a></li>
+            <li class="top-nav__link--overlayed user__option--loggedout"><a href="#">Login</a></li>
+            <li class="top-nav__link--overlayed user__option--loggedout"><a href="#">SignUp</a></li>
+        </ul>
+    </div>
     <header class="top-bar">
         <a href="index.html" id="top-bar__logo-container"><img src="img/logo-white.PNG" alt="GaSM Logo" id="top-bar__logo"></a>
-        <h2 class="form-title">Raportare a depozitului ilegal de gunoi </h2>
-
+        <ul class="top-nav">
+            <li class="top-nav__link"><a href="index.html">Home</a></li>
+            <li class="top-nav__link"><a href="FormularRaportare.html">Raporteaza o zona</a></li>
+            <li class="top-nav__link"><a href="#statistici">Statistici</a></li>
+            <li class="top-nav__link"><a href="FormularCampanie.html">Creeaza o campanie</a></li>
+            <li class="top-nav__link"><a href="#campaniiform.html">Campanii</a></li>
+        </ul>
+        <form class="top-nav__login">
+            <label>
+                <!-- <span>Username</span> -->
+                <br>
+                <input class="top-nav__text" type="text" name="username" placeholder="Username or email">
+            </label>
+            <label>
+                <!-- <span>Password</span> -->
+                <br>
+                <input class="top-nav__text" type="password" name="password" placeholder="Password">
+            </label>
+            <button type="submit" hidden>LogIn</button>
+        </form>
         <div class="user-profile">
-            <p><i id="mobile-menu" class="fa fa-bars"></i></p>
-            <p><i id="profile-button" class="fa fa-user-circle" aria-hidden="true"></i></p>
-            <ul class="user-options" id="arrowup">
+
+            <label for="overlay-checkbox" id="mobile-menu"><i class="fa fa-bars"></i></label>
+            <label id="profile-button"><i class="fa fa-user-circle"></i></label>
+            <ul class="user-options">
+                <div id="arrowup"></div>
                 <li class="user__option"><a href="#">View User Profile</a></li>
                 <li class="user__option"><a href="#">Config Account</a></li>
                 <li class="user__option"><a href="#">Log Out</a></li>
+                <li class="user__option user__option--loggedout"><a href="#">Login</a></li>
+                <li class="user__option user__option--loggedout"><a href="#">SignUp</a></li>
             </ul>
         </div>
     </header>
+
 
     <div class="main-content">
         <div class="container-report">
