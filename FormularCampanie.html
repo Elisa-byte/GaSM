@@ -1,54 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheets/formularCampanie.css">
     <title>Formular Campanie</title>
 </head>
 
 <body>
-    <div>
-        <h3>Initiaza char tu o campanie de sensibilizare asupra unei teme ecologice!</h3>
-        <form method="POST">
-            <!--
-                nume, prenume, adresa, cetatean sau personal autorizat
-            -->
-            <label class="campaigne__name">Numele campaniei</label><br>
-            <input type="text"><br>
-            <label class="campaigne__description">Descrierea campaniei</label><br>
-            <input type="text" id="campanie-descriere"><br>
-            <h4 class="campaigne__type">Tipul campaniei</h4>
-            <p>
-                Strangere de fnduri : <input type="radio" name="hour" value="AM" /><br /> Meeting : <input type="radio" name="hour" value="PM" /><br /> Mesaj : <input type="radio" name="hour" value="PM" /><br />
-            </p>
-            <label class="campaigne__duration">Durata campaniei(ore,minute)</label><br>
-            <input type="text" id="campanie-startingHour"><br>Ora de inceput a campaniei</label><br>
-            <input type="text" id="campanie-starrtHour"><br>
-            <p>
-                AM : <input type="radio" name="hour" value="AM" /><br /> PM : <input type="radio" name="hour" value="PM" /><br />
-            </p>
-            <label for="adresa">Alegeti orasul </label><br>
-            <!--partea cu select -->
-            <select id="adresa" name="adresa">
-                <option value="0" selected="selected">Alege...</option> <option value="42">Alba</option> <option value="1">Arad</option> <option value="2">Arges</option> <option value="3">Bacau</option> <option value="4">Bihor</option> <option value="5">Bistrita-Nasaud</option> <option value="6">Botosani</option> <option value="7">Braila</option> <option value="8">Brasov</option> <option value="9">BUCURESTI</option> <option value="10">Buzau</option> <option value="11">Calarasi</option> <option value="12">Caras-Severin</option> <option value="13">Cluj</option> <option value="14">Constanta</option> <option value="15">Covasna</option> <option value="16">Dambovita</option> <option value="17">Dolj</option> <option value="18">Galati</option> <option value="19">Giurgiu</option> <option value="20">Gorj</option> <option value="21">Harghita</option> <option value="22">Hunedoara</option> <option value="23">Ialomita</option> <option value="24">Iasi</option> <option value="25">Ilfov</option> <option value="26">Maramures</option> <option value="27">Mehedinti</option> <option value="28">Mures</option> <option value="29">Neamt</option> <option value="30">Olt</option> <option value="31">Prahova</option> <option value="32">Salaj</option> <option value="33">Satu Mare</option> <option value="34">Sibiu</option> <option value="35">Suceava</option> <option value="36">Teleorman</option> <option value="37">Timis</option> <option value="38">Tulcea</option> <option value="39">Valcea</option> <option value="40">Vaslui</option> <option value="41">Vrancea</option>
-            </select><br>
-            <label class="campaigne__locationn">Locatia: </label><br>
-            <input type="text" id="campanie-location"><br>
-            <label for="persoana">Destinat catre</label><br>
-            <select id="persoana" name="persoana"><br>
-               <option value="0" selected="selectPerson">Alege...</option>
-               <option value="1">Cetateni</option>
-               <option value="2">Personal autorizat</option>
-            </select><br>
-            <h3 class="dateDeContact">Date de contact</h3>
-            <label for="email">Email</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="tel">Numar de telefon</label><br>
-            <input type="tel" id="tel" name="tel"><br><br>
-            <input type="submit" value="Submit">
+    <div class="bg-img">
+        <!-- <form action="/action_page.php" class="container">
+            <h1>Login</h1>
 
-            <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form> -->
+        <form class="form-campaign" method="POST" action="/action_page.php">
+            <h1 class="form-title"> Formular de inregistrare campanie</h1>
+            <div class="two-rows">
+                <div class="one-column">
+                    <input class="form-input" type="text" name="name" placeholder="Numele Campaniei" required>
+                    <input class="form-input" type="text" name="description" placeholder="Descrierea Campaniei" required>
+                    <!-- </div> -->
+
+                    <!-- <div class="two-columns"> -->
+                    <input class="form-input" type="text" name="duration" placeholder="Durata Campaniei(ore,minute)">
+                    <input class="form-input" type="text" name="begining" placeholder="Ora de inceput a  Campaniei">
+                    <!-- </div> -->
+                    <p>
+                        AM : <input type="radio" name="hour" value="AM" /><br /> PM : <input type="radio" name="hour" value="PM" /><br />
+                    </p>
+                </div>
+
+                <div class="one-column">
+                    <div class="group, form-input, choose">
+                        <label class="label">Tipul campaniei</label>
+                        <div class="selection-campaign-type">
+                            <select name="category" tabindex="-1" class="selection-category-hidden-accessible" aria-hidden="true">
+                            <option disabled="disabled" selected="selected">Alegeti o optiune</option>
+                            <option value="1">Strangere de fonduri</option>
+                            <option value="2">Meeting</option>
+                            <option value="3">Mesaj</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="group, form-input, choose">
+                        <label class="label">Destinatia camppaniei</label>
+                        <div class="selection-category-person">
+                            <select name="category" tabindex="-1" class="selection-category-hidden-accessible" aria-hidden="true">
+                        <option disabled="disabled" selected="selected">Alegeti o optiune</option>
+                        <option value="1">Cetateni</option>
+                        <option value="2">Personal autorizat</option>
+                        <option value="3">Oricine</option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="group, form-input, choose">
+                        <label class="label">Orasul-locatie</label>
+                        <div class="selection-location-person">
+                            <select name="location" tabindex="-1" class="selection-location-hidden-accessible" aria-hidden="true">
+                        <option disabled="disabled" selected="selected">Alegeti o optiune</option>
+                        <option value="42">Alba</option>
+                        <option value="1">Arad</option>
+                        <option value="2">Arges</option>
+                        <option value="3">Bacau</option>
+                        <option value="4">Bihor</option>
+                        <option value="5">Bistrita-Nasaud</option>
+                        <option value="6">Botosani</option>
+                        <option value="7">Braila</option>
+                        <option value="8">Brasov</option>
+                        <option value="9">BUCURESTI</option>
+                        <option value="10">Buzau</option>
+                        <option value="11">Calarasi</option>
+                        <option value="12">Caras-Severin</option>
+                        <option value="13">Cluj</option>
+                        <option value="14">Constanta</option>
+                        <option value="15">Covasna</option>
+                        <option value="16">Dambovita</option>
+                        <option value="17">Dolj</option>
+                        <option value="18">Galati</option>
+                        <option value="19">Giurgiu</option>
+                        <option value="20">Gorj</option>
+                        <option value="21">Harghita</option>
+                        <option value="22">Hunedoara</option>
+                        <option value="23">Ialomita</option>
+                        <option value="24">Iasi</option>
+                        <option value="25">Ilfov</option>
+                        <option value="26">Maramures</option>
+                        <option value="27">Mehedinti</option>
+                        <option value="28">Mures</option>
+                        <option value="29">Neamt</option>
+                        <option value="30">Olt</option>
+                        <option value="31">Prahova</option>
+                        <option value="32">Salaj</option>
+                        <option value="33">Satu Mare</option>
+                        <option value="34">Sibiu</option>
+                        <option value="35">Suceava</option>
+                        <option value="36">Teleorman</option>
+                        <option value="37">Timis</option>
+                        <option value="38">Tulcea</option>
+                        <option value="39">Valcea</option>
+                        <option value="40">Vaslui</option>
+                        <option value="41">Vrancea</option>
+                    </select>
+                        </div>
+                    </div>
+                    <input class="form-input" type="text" name="location-address" placeholder="Adresa locatiei" required>
+
+
+                </div>
+
+            </div>
+            <h4 class="form-title">Date de contact</h4>
+            <div class="two-rows">
+                <div class="one-column">
+                    <input class="form-input" type="text" name="phone" placeholder="Numarul de telefon" required>
+                </div>
+                <div class="one-column">
+                    <input class="form-input" type="text" name="email" placeholder="Email" required>
+                </div>
+            </div>
+            <button type="submit" class="btn">Inregistrare</button>
         </form>
     </div>
 </body>
