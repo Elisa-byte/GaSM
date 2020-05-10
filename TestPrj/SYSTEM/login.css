@@ -9,7 +9,6 @@
     box-sizing: border-box;
     margin: 0;
 }
-
 div {
     display: block;
 } */
@@ -17,9 +16,10 @@ div {
 body,
 html {
     height: 100%;
-    font-family: Poppins-regular, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    /*font-weight: 400;*/
+    /*font-size: 14px;*/
+    font-size: 1rem;
     line-height: 1.5;
     color: #212529;
     background-color: #fff;
@@ -161,13 +161,13 @@ html {
     text-transform: uppercase;
     display: block;
     align-self: center;
-    margin-bottom: 40px;
 }
 
 .row-space {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-left: 30px;
 }
 
 .col-2 {
@@ -235,10 +235,11 @@ html {
     font-size: 16px;
     color: white;
     line-height: 1.2;
+    display:block;
     /*display: block; -deoarece nu mergeau padding-urile de la celalte div-uri din form */
-    display: inline;
+    /*display: inline;*/
     height: 45px;
-    width: 95%;
+    width: 87%;
     background: transparent;
     padding: 0 0 0 20px;
 }
@@ -268,7 +269,7 @@ html {
     height: 45px;
     width: 95%;
     background: transparent;
-    padding: 0 5px 0 20px;
+    padding: 0 15px 0 40px;
 }
 
 .input-report-login-signup-AS {
@@ -293,8 +294,8 @@ html {
     display: block;
     width: 100%;
     height: 100%;
-    top: -15px;
-    left: 0;
+    bottom: 20px;
+    right:20px;
     pointer-events: none;
 }
 
@@ -400,6 +401,7 @@ input[type="checkbox"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-left: 70px;
 }
 
 .form-login-button-submit {
@@ -409,10 +411,12 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 10px;
+    /*padding: 0 10px;*/
     min-width: 120px;
     height: 50px;
     border-radius: 25px;
+/*    added*/
+    margin-right: 40px !important;
 }
 
 .form-signup-button,
@@ -436,6 +440,21 @@ input[type="checkbox"] {
     min-width: 120px;
     height: 40px;
     border-radius: 25px;
+}
+/*   BUTTON RESET PWD*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
+
+.button-reset-pwd{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 .button-report-login-signup-AS {
