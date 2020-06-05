@@ -37,6 +37,12 @@
                         else if ($_GET['error'] == 'invalidusername'){
                             echo '<p class="help-block" > Nu ati completat corect numele dumneavoastra de utilizator!</p> ';
                         }
+                        else if ($_GET['error'] == 'invalidpwd'){
+                            echo '<p class="help-block" > Parola invalida! Respectati cerintele parolei!</p> ';
+                        }
+                        else if ($_GET['error'] == 'pwdTooSmall'){
+                            echo '<p class="help-block" > Parola trebuie sa contina macar 8 caractere</p> ';
+                        }
                         else if ($_GET['error'] == 'passwordCheck'){
                             echo '<p class="help-block" > Parolele nu corespund!</p> ';
                         }

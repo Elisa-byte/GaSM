@@ -46,6 +46,7 @@
         <li class="top-nav__link"><a href="#campaniiform.html">Campanii</a></li>
     </ul>
     <?php
+//                    ['idUsers']
     if(isset($_SESSION['userId'])){
 //        echo '<form action="includes/logout.inc.php" method="Post">
 //        <button type = "submit" name="logout-submit"> Logout"</button>

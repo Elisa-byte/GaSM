@@ -1,0 +1,18 @@
+CREATE TABLE report (
+    idReport int(10) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    obsIncReport TINYTEXT NOT NULL,
+    recogPersReport TINYTEXT NOT NULL,
+    typeLiReport TINYTEXT NOT NULL,
+    quantityReport TINYTEXT NOT NULL,
+    companyReport TINYTEXT,
+    carTypeReport TINYTEXT,
+    licensePlateReport TINYTEXT,
+    carModelReport TINYTEXT,
+    carColorReport TINYTEXT,
+    judetReport TINYTEXT NOT NULL,
+    localitateReport LONGTEXT NOT NULL,
+    streetReport LONGTEXT NOT NULL,
+    dateReport DATE NOT NULL,
+    detailsReport TEXT,
+    imageReport LONGBLOB
+    );

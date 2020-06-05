@@ -9,7 +9,6 @@
     box-sizing: border-box;
     margin: 0;
 }
-
 div {
     display: block;
 } */
@@ -17,9 +16,10 @@ div {
 body,
 html {
     height: 100%;
-    font-family: Poppins-regular, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    /*font-weight: 400;*/
+    /*font-size: 14px;*/
+    font-size: 1rem;
     line-height: 1.5;
     color: #212529;
     background-color: #fff;
@@ -31,7 +31,7 @@ html {
 }
 
 .container-login {
-    background-image: url("../img/logo-dark.PNG");
+    background-image: url("../CSS/logo-dark.PNG");
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -59,7 +59,7 @@ html {
 }
 
 .container-signup {
-    background-image: url("../img/logo-white.PNG");
+    background-image: url("../CSS/logo-white.PNG");
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -87,7 +87,7 @@ html {
 }
 
 .container-report {
-    background-image: url("../img/logo-dark.PNG");
+    background-image: url("../CSS/logo-dark.PNG");
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -114,9 +114,37 @@ html {
     background-color: rgba(221, 220, 220, 0.5);
 }
 
+.container-account-settings {
+    background-image: url("../CSS/logo-dark.PNG");
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+}
+
+.container-account-settings::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(221, 220, 220, 0.5);
+}
+
 *,
- ::after,
- ::before {
+::after,
+::before {
     box-sizing: inherit;
 }
 
@@ -145,6 +173,11 @@ html {
     background-color: rgba(95, 156, 114, 0.719);
 }
 
+.wrap-account-settings {
+    padding: 40px 40px 27px 40px;
+    background-color: rgba(95, 156, 114, 0.719);
+}
+
 @media (max-width: 576px) {
     .wrap-login {
         padding: 55px 15px 37px 15px;
@@ -161,13 +194,24 @@ html {
     text-transform: uppercase;
     display: block;
     align-self: center;
-    margin-bottom: 40px;
 }
 
 .row-space {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-left: 30px;
+}
+
+.row-space-model {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 2px;
+}
+
+.col-2-model {
+    width: calc((100% - 2px)/2);
 }
 
 .col-2 {
@@ -207,7 +251,7 @@ html {
 }
 
 .form-logo-img {
-    background-image: url("../img/logo2-dark.png.PNG");
+    background-image: url("../CSS/logo2-dark.PNG");
     max-width: 100%;
     max-height: 100%;
     border-radius: 30%;
@@ -217,8 +261,7 @@ html {
 
 .form-input {
     position: relative;
-    margin-right: 8px;
-    margin-left: 8px;
+    margin-right: 5px;
     outline: none;
     overflow: visible;
     width: 100%;
@@ -237,10 +280,54 @@ html {
     color: white;
     line-height: 1.2;
     display: block;
+    /*display: block; -deoarece nu mergeau padding-urile de la celalte div-uri din form */
+    /*display: inline;*/
+    height: 45px;
+    width: 87%;
+    background: transparent;
+    padding: 0 0 0 20px;
+}
+
+.form-input- {
+    position: relative;
+    margin-right: 8px;
+    margin-left: 8px;
+    outline: none;
+    overflow: visible;
+    width: 100%;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    border: none;
+    /*border-bottom: 5px solid rgba(255, 255, 255, 0.5);*/
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: white;
+    line-height: 1.2;
+    /*display: block; -deoarece nu mergeau padding-urile de la celalte div-uri din form */
+    display: inline;
     height: 45px;
     width: 95%;
     background: transparent;
-    padding: 0 5px 0 38px;
+    padding: 0 15px 0 40px;
+}
+
+.textarea-report {
+    width: calc(100% - 12px);
+    background: transparent;
+    padding: 0 0 0 20px;
+    // overflow: visible;
+}
+
+.textarea-report:hover {
+    outline: none;
+    background: transparent;
+    border: 2px solid #003f0b;
 }
 
 .input-report-login-signup-AS {
@@ -265,8 +352,20 @@ html {
     display: block;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    bottom: 20px;
+    right: 20px;
+    pointer-events: none;
+}
+
+.help-block {
+    position: relative;
+    display: block;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    padding-bottom: 5px;
+    color: rebeccapurple;
     pointer-events: none;
 }
 
@@ -302,6 +401,7 @@ html {
 }
 
 .form-login-remember-me {
+    padding-top: 20px;
     padding-left: 5px;
     padding-top: 5px;
     padding-bottom: 35px;
@@ -358,6 +458,7 @@ input[type="checkbox"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-left: 70px;
 }
 
 .form-login-button-submit {
@@ -367,10 +468,12 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 10px;
+    /*padding: 0 10px;*/
     min-width: 120px;
     height: 50px;
     border-radius: 25px;
+    /*    added*/
+    margin-right: 40px !important;
 }
 
 .form-signup-button,
@@ -394,6 +497,24 @@ input[type="checkbox"] {
     min-width: 120px;
     height: 40px;
     border-radius: 25px;
+}
+
+
+/*   BUTTON RESET PWD*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
+.button-reset-pwd {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 .button-report-login-signup-AS {
@@ -517,13 +638,14 @@ a {
 .question-answer {
     /* display: block; */
     /* altfel le pune unele sub altele */
-    padding-left: 44px;
+    padding-left: 40px;
     padding-right: 40px;
 }
 
 .h1-report {
     font-weight: 400;
     padding-left: 45px;
+    padding-right: 45px;
 }
 
 .h4-report {
@@ -531,13 +653,28 @@ a {
     padding-left: 47px;
 }
 
-.textarea-report {
-    width: calc(100% - 12px);
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
 
-.textarea-report:hover {
-    outline: none;
-    border: 1px solid #095484;
+.btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
 }
 
 .btn-block {
@@ -552,6 +689,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: inherit; 
+    height: inherit;
     padding: 20px;
 } */

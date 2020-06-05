@@ -37,10 +37,20 @@ if(isset($_POST['signup-submit'])){
         header("Location: ../signup.php?error=invalidmail&fname=".$fname."&lname=".$lname."&phone=".$phone."&username=".$username."&category=".$category."&location=".$location);
         exit();
     }
+    else if(!filter_var($password, FILTER_VALIDATE_REGEXP,
+        array( "options"=> array( "regexp" => "/.{8,25}/")))){
+        header("Location: ../signup.php?error=invalidpwd&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
+        exit();
+    }
     else if(!preg_match("/^[a-zA-Z0-9]*$/",$username)){
         header("Location: ../signup.php?error=invalidusername&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&category=".$category."&location=".$location);
         exit();
     }
+    else if(strlen(trim($_POST["password"])) < 8){
+        header("Location: ../signup.php?error=pwdTooSmall&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&category=".$category."&location=".$location);
+        exit();
+    }
+
     else if($password !== $passwordRepeat){
         header("Location: ../signup.php?error=passwordCheck&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
         exit();

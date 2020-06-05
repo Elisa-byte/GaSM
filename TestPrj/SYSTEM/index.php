@@ -4,6 +4,7 @@
 
 <main>
     <?php
+//                        ['idUsers']
         if(isset($_SESSION['userId'])){
             echo '<p> V-ati logat!</p>';
         }

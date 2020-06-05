@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>account-settings.php</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #bababa;}
+.s2 { color: #a9b7c6;}
+.s3 { color: #a5c261;}
+.s4 { color: #808080;}
+.s5 { color: #a9b7c6;}
+.s6 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+account-settings.php</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s1">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s1">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s1">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s1">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s1">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s0">&gt;</span>
+<span class="s4">&lt;!--    &lt;script src=&quot;/GaSM/JavaScript/viewPassword.js&quot;&gt;&lt;/script&gt;--&gt;</span>
+    <span class="s0">&lt;link </span><span class="s1">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s1">type</span><span class="s3">=&quot;text/css&quot; </span><span class="s1">href</span><span class="s3">=&quot;login.css&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s5">AccountSettings</span><span class="s0">&lt;/title&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+
+<span class="s0">&lt;body&gt;</span>
+<span class="s0">&lt;div </span><span class="s1">class</span><span class="s3">=&quot;main-content&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;div </span><span class="s1">class</span><span class="s3">=&quot;container-account-settings&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s1">class</span><span class="s3">=&quot;wrap-account-settings&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s1">class</span><span class="s3">=&quot;card-4 &quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;form </span><span class="s1">class</span><span class="s3">=&quot;form-login&quot; </span><span class="s1">action</span><span class="s3">=&quot;includes/account-settings.inc.php&quot; </span><span class="s1">method</span><span class="s3">=&quot;POST&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;fieldset </span><span class="s1">class</span><span class="s3">=&quot;fieldset-AS&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;legend </span><span class="s1">class</span><span class="s3">=&quot;form-title&quot;</span><span class="s0">&gt;</span><span class="s5">Setari profil</span><span class="s0">&lt;/legend&gt;</span>
+                        <span class="s0">&lt;p </span><span class="s1">class</span><span class="s3">=&quot;profile_settings_avatar_image&quot;</span><span class="s0">&gt;</span>
+                            <span class="s0">&lt;img </span><span class="s1">src</span><span class="s3">=&quot;https://www.publicdomainpictures.net/pictures/270000/nahled/avatar-people-person-business-u.jpg&quot; </span><span class="s1">alt</span><span class="s3">=&quot;Avatar&quot; </span><span class="s1">class</span><span class="s3">=&quot;image_avatar_settings_profile&quot; </span><span class="s1">style</span><span class="s3">=&quot;</span><span class="s1">width</span><span class="s5">:</span><span class="s6">10</span><span class="s3">vw&quot;</span><span class="s0">&gt;</span>
+                            <span class="s4">&lt;!-- link catre fisiere --&gt;</span>
+                            <span class="s4">&lt;!-- &lt;input type=&quot;file&quot; id=&quot;profile_settings_avatar_image&quot; name=&quot;profile_settings_avatar_image&quot; accept=&quot;image/*&quot;&gt; --&gt;</span>
+                        <span class="s0">&lt;/p&gt;</span>
+                        <span class="s0">&lt;label </span><span class="s1">class</span><span class="s3">=&quot;profile_settings_avatar_image&quot;</span><span class="s0">&gt;</span><span class="s5">Schimba-ti imaginea de profil</span><span class="s0">&lt;/label&gt;</span>
+<span class="s4">&lt;!--                        &lt;div class=&quot;row row-space&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;input class=&quot;form-input&quot; type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Nume&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;span class=&quot;form-span&quot; data-placeholder=&quot;😃‍&quot;&gt;&lt;/span&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;input class=&quot;form-input&quot; type=&quot;text&quot; name=&quot;prename&quot; placeholder=&quot;Prenume&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;span class=&quot;form-span&quot; data-placeholder=&quot;😃‍&quot;&gt;&lt;/span&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;div class=&quot;row row-space&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;input class=&quot;form-input&quot; type=&quot;password&quot; name=&quot;parola&quot; placeholder=&quot;Parola&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;span class=&quot;form-span&quot; data-placeholder=&quot;‍🔗&quot;&gt;&lt;/span&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;input type=&quot;checkbox&quot; onclick=&quot;myFunction()&quot;&gt;Arata parola&lt;br&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;div class=&quot;row row-space&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;input class=&quot;form-input&quot; type=&quot;text&quot; name=&quot;Nume de utilizator&quot; placeholder=&quot;Nume de utilizator&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;span class=&quot;form-span&quot; data-placeholder=&quot;😃‍&quot;&gt;&lt;/span&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;input class=&quot;form-input&quot; type=&quot;text&quot; name=&quot;company&quot; placeholder=&quot;Numele companiei&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;span class=&quot;form-span&quot; data-placeholder=&quot;‍🏗&quot;&gt;&lt;/span&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;div class=&quot;row row-space&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;input class=&quot;form-input&quot; type=&quot;text&quot; name=&quot;phone&quot; placeholder=&quot;Numarul de telefon&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;span class=&quot;form-span&quot; data-placeholder=&quot;📞‍&quot;&gt;&lt;/span&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;input class=&quot;form-input&quot; type=&quot;text&quot; name=&quot;Email&quot; placeholder=&quot;Email&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;span class=&quot;form-span&quot; data-placeholder=&quot;‍📧&quot;&gt;&lt;/span&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;div class=&quot;row row-space&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;label class=&quot;label&quot;&gt;Categorie&lt;/label&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;div class=&quot;selection-category-person&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                        &lt;select name=&quot;category&quot; tabindex=&quot;-1&quot; class=&quot;selection-category-hidden-accessible&quot; aria-hidden=&quot;true&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                            &lt;option disabled=&quot;disabled&quot; selected=&quot;selected&quot;&gt;Alegeti o optiune&lt;/option&gt;--&gt;</span>
+<span class="s4">&lt;!--                                            &lt;option value=&quot;1&quot;&gt;Cetatean&lt;/option&gt;--&gt;</span>
+<span class="s4">&lt;!--                                            &lt;option value=&quot;2&quot;&gt;Personal autorizat&lt;/option&gt;--&gt;</span>
+<span class="s4">&lt;!--                                        &lt;/select&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;div class=&quot;col-2&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;div class=&quot;group&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;label class=&quot;label&quot;&gt;Locatie&lt;/label&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;div class=&quot;selection-location-person&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                        &lt;select name=&quot;location&quot; tabindex=&quot;-1&quot; class=&quot;selection-location-hidden-accessible&quot; aria-hidden=&quot;true&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--                                            &lt;option disabled=&quot;disabled&quot; selected=&quot;selected&quot;&gt;Alegeti o optiune&lt;/option&gt;--&gt;</span>
+<span class="s4">&lt;!--                                            &lt;option value=&quot;42&quot;&gt;Alba&lt;/option&gt; &lt;option value=&quot;1&quot;&gt;Arad&lt;/option&gt; &lt;option value=&quot;2&quot;&gt;Arges&lt;/option&gt; &lt;option value=&quot;3&quot;&gt;Bacau&lt;/option&gt; &lt;option value=&quot;4&quot;&gt;Bihor&lt;/option&gt; &lt;option value=&quot;5&quot;&gt;Bistrita-Nasaud&lt;/option&gt; &lt;option value=&quot;6&quot;&gt;Botosani&lt;/option&gt; &lt;option value=&quot;7&quot;&gt;Braila&lt;/option&gt; &lt;option value=&quot;8&quot;&gt;Brasov&lt;/option&gt; &lt;option value=&quot;9&quot;&gt;BUCURESTI&lt;/option&gt; &lt;option value=&quot;10&quot;&gt;Buzau&lt;/option&gt; &lt;option value=&quot;11&quot;&gt;Calarasi&lt;/option&gt; &lt;option value=&quot;12&quot;&gt;Caras-Severin&lt;/option&gt; &lt;option value=&quot;13&quot;&gt;Cluj&lt;/option&gt; &lt;option value=&quot;14&quot;&gt;Constanta&lt;/option&gt; &lt;option value=&quot;15&quot;&gt;Covasna&lt;/option&gt; &lt;option value=&quot;16&quot;&gt;Dambovita&lt;/option&gt; &lt;option value=&quot;17&quot;&gt;Dolj&lt;/option&gt; &lt;option value=&quot;18&quot;&gt;Galati&lt;/option&gt; &lt;option value=&quot;19&quot;&gt;Giurgiu&lt;/option&gt; &lt;option value=&quot;20&quot;&gt;Gorj&lt;/option&gt; &lt;option value=&quot;21&quot;&gt;Harghita&lt;/option&gt; &lt;option value=&quot;22&quot;&gt;Hunedoara&lt;/option&gt; &lt;option value=&quot;23&quot;&gt;Ialomita&lt;/option&gt; &lt;option value=&quot;24&quot;&gt;Iasi&lt;/option&gt; &lt;option value=&quot;25&quot;&gt;Ilfov&lt;/option&gt; &lt;option value=&quot;26&quot;&gt;Maramures&lt;/option&gt; &lt;option value=&quot;27&quot;&gt;Mehedinti&lt;/option&gt; &lt;option value=&quot;28&quot;&gt;Mures&lt;/option&gt; &lt;option value=&quot;29&quot;&gt;Neamt&lt;/option&gt; &lt;option value=&quot;30&quot;&gt;Olt&lt;/option&gt; &lt;option value=&quot;31&quot;&gt;Prahova&lt;/option&gt; &lt;option value=&quot;32&quot;&gt;Salaj&lt;/option&gt; &lt;option value=&quot;33&quot;&gt;Satu Mare&lt;/option&gt; &lt;option value=&quot;34&quot;&gt;Sibiu&lt;/option&gt; &lt;option value=&quot;35&quot;&gt;Suceava&lt;/option&gt; &lt;option value=&quot;36&quot;&gt;Teleorman&lt;/option&gt; &lt;option value=&quot;37&quot;&gt;Timis&lt;/option&gt; &lt;option value=&quot;38&quot;&gt;Tulcea&lt;/option&gt; &lt;option value=&quot;39&quot;&gt;Valcea&lt;/option&gt; &lt;option value=&quot;40&quot;&gt;Vaslui&lt;/option&gt; &lt;option value=&quot;41&quot;&gt;Vrancea&lt;/option&gt;--&gt;</span>
+<span class="s4">&lt;!--                                        &lt;/select&gt;--&gt;</span>
+<span class="s4">&lt;!--                                    &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                                &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                            &lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--                        &lt;/div&gt;--&gt;</span>
+                        <span class="s0">&lt;div </span><span class="s1">class</span><span class="s3">=&quot;btn-already&quot;</span><span class="s0">&gt;</span>
+                            <span class="s4">&lt;!-- pop up pentru parola dinaintea eventualei schimbari de mai sus --&gt;</span>
+                            <span class="s0">&lt;div </span><span class="s1">class</span><span class="s3">=&quot;form-signup-button confirmation_settings_profile&quot;</span><span class="s0">&gt;</span>
+                                <span class="s0">&lt;button </span><span class="s1">class</span><span class="s3">=&quot;form-signup-button-submit&quot; </span><span class="s1">type</span><span class="s3">=&quot;submit&quot;</span><span class="s0">&gt;</span><span class="s5">Salvare modificari</span><span class="s0">&lt;/button&gt;</span>
+                            <span class="s0">&lt;/div&gt;</span>
+                        <span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;/fieldset&gt;</span>
+                <span class="s0">&lt;/form&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
