@@ -11,7 +11,6 @@
     <script src="JavaScript/viewMap.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <title>FormularRaportare</title>
-
 </head>
 
 <body>

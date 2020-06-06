@@ -217,17 +217,22 @@ html {
 }
 
 .col-2 {
-    width: calc((100% - 30px)/2);
+    width: calc((100% - 2px)/2);
 }
 
 .group {
     position: relative;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
 ::placeholder {
     color: white;
     opacity: 0.9;
+    font-size: 20px;
+}
+
+:-ms-input-placeholder {
+    font-size: 15px;
 }
 
 .requests {
@@ -252,13 +257,9 @@ html {
     margin: 0 auto;
 }
 
-.form-logo-img {
-    background-image: url("../CSS/logo2-dark.PNG");
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 30%;
-    display: inline-block;
-    font-size: inherit;
+.img-logo{
+    height: 1.2em;
+    margin-bottom: 10px;
 }
 
 .form-input {
@@ -289,6 +290,31 @@ html {
     background: transparent;
     padding: 0 0 0 20px;
 }
+
+.form-selected-input{
+    position: relative;
+    outline: none;
+    overflow: visible;
+    width: 100%;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    border: none;
+    font-size: 17px;
+    color: white;
+    line-height: 1.2;
+    display:block;
+    /*display: block; -deoarece nu mergeau padding-urile de la celalte div-uri din form */
+    /*display: inline;*/
+    background: transparent;
+    padding: 0 0 0 20px;
+}
+
 .form-input-{
     position: relative;
     margin-right: 8px;
@@ -314,8 +340,7 @@ html {
     display: inline;
     height: 45px;
     width: 95%;
-    background: transparent;
-    padding: 0 15px 0 40px;
+    /*padding: 0 15px 0 40px;*/
 }
 
 .textarea-report{
@@ -355,7 +380,7 @@ html {
     display: block;
     width: 100%;
     height: 100%;
-    bottom: 20px;
+    bottom: 7px;
     right:20px;
     pointer-events: none;
 }
@@ -403,52 +428,147 @@ html {
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
-
-.form-login-remember-me {
-    padding-top: 20px;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 35px;
-}
-
-input[type="checkbox"] {
-    box-sizing: border-box;
-    padding: 0;
-    background-color: initial;
-    cursor: default;
-    -webkit-appearance: checkbox;
-}
-
-.input-checkbox-remember-me {
-    display: none;
-}
-
+/* --------- REMEMBER ME -----------*/
 .label-checkbox-remember-me {
-    font-size: 13px;
-    color: #6e3f14;
-    font-size: 13px;
-    line-height: 1.2;
     display: block;
     position: relative;
-    padding-left: 26px;
+    padding-left: 25px;
+    margin-bottom: 10px;
     cursor: pointer;
+    font-size: 17px;
+    color: #6e3f14;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.label-checkbox-remember-me::before {
-    content: "\f26b";
-    font-size: 13px;
-    color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Hide the browser's default checkbox */
+.label-checkbox-remember-me input {
     position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 2px;
-    background: #fff;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* On mouse-over, add a grey background color */
+.label-checkbox-remember-me:hover input ~ .checkmark-remember-me {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.label-checkbox-remember-me input:checked ~ .checkmark-remember-me {
+    background-color: #745D4D;
+}
+
+/* Show the checkmark when checked */
+.label-checkbox-remember-me input:checked ~ .checkmark-remember-me:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.label-checkbox-remember-me .checkmark-remember-me:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-remember-me:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* Create a custom checkbox */
+.checkmark-remember-me {
+    position: absolute;
+    top: 0;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 17px;
+    width: 17px;
+    background-color: #eee;
+}
+
+.label-checkbox-show-pwd{
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    color: #6e3f14;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.label-checkbox-show-pwd input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* On mouse-over, add a grey background color */
+.label-checkbox-show-pwd:hover input ~ .checkmark-show-pwd {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.label-checkbox-show-pwd input:checked ~ .checkmark-show-pwd {
+    background-color: #003f0b;
+}
+
+/* Show the checkmark when checked */
+.label-checkbox-show-pwd input:checked ~ .checkmark-show-pwd:after {
+    display: block;
+}
+/* Style the checkmark/indicator */
+.label-checkbox-show-pwd .checkmark-show-pwd:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-show-pwd:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* Create a custom checkbox */
+.checkmark-show-pwd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+}
+.form-login-show-pwd{
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-login-remember-me {
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 25px;
 }
 
 .label-report {
@@ -458,26 +578,49 @@ input[type="checkbox"] {
 }
 
 .form-login-button {
-    width: 30%;
+    width: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 70px;
+    margin-left: 35px;
+}
+
+.form-signup-button {
+    width: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+.requests{
+    font-size: 15px;
 }
 
 .form-login-button-submit {
+    background-color: rgba(217,224,218, 0.9); /* Green */
+    border: none;
+    color: #4CAF50;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
-    color: #555555;
+    transition-duration: 0.4s;
+    cursor: pointer;
     line-height: 1.2;
     display: flex;
     justify-content: center;
     align-items: center;
     /*padding: 0 10px;*/
-    min-width: 120px;
+    min-width: 100px;
     height: 50px;
-    border-radius: 25px;
-/*    added*/
-    margin-right: 40px !important;
+    border-radius: 5px;
+}
+
+.form-login-button-submit:hover{
+    background-color: rgba(66,103,72, 0.5);
+    color: white;
 }
 
 .form-signup-button,
@@ -545,6 +688,10 @@ input[type="checkbox"] {
     line-height: 1.2;
 }
 
+.forgot-password:hover{
+    color: #003f0b;
+}
+
 select {
     text-rendering: auto;
     color: white;
@@ -561,7 +708,7 @@ select {
     background-color: rgb(81, 97, 88, 0.8);
     font-weight: 200;
     cursor: default;
-    font: 400 13.3333px Arial;
+    font: 400 16px Arial;
     border-radius: 0px;
     border: 0 !important;
     clip: rect(0 0 0 0);
@@ -694,3 +841,45 @@ a {
     height: inherit;
     padding: 20px;
 } */
+
+/* MOBILE DEVICES */
+
+@media only screen and (max-width: 1182px) {
+    .main-content {
+        width: 90%;
+    }
+    .top-nav,
+    .top-nav__login,
+    #profile-button {
+        display: none;
+    }
+    .top-bar {
+        justify-content: space-between;
+    }
+    #mobile-menu {
+        display: inherit;
+    }
+    #overlay-menu {
+        height: 100vh;
+        width: 100vw;
+        background: #420601;
+        z-index: 2;
+        visibility: hidden;
+        position: fixed;
+        display: inherit;
+    }
+    #overlay-checkbox:checked~#overlay-menu {
+        visibility: visible;
+        animation: opacity 200ms ease-in-out normal;
+    }
+    #mobile-menu:hover {
+        transform: rotate(90deg);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .main-content {
+        width: 100%;
+    }
+}
+

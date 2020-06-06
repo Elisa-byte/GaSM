@@ -41,6 +41,7 @@
                     //print_r($mail);
                     $username = $row['uidUsers'];
                     //print_r($username);
+
                     $category = $row['categoryUsers'];
                     $location = $row['locationUsers'];
 
@@ -142,11 +143,33 @@
                                 </div>
                             </div>
                         </div>
-<!--                        add button for forgotten password-->
-                        <div class="btn-already">
-                            <!-- pop up pentru parola dinaintea eventualei schimbari de mai sus -->
-                            <div class="form-signup-button confirmation_settings_profile">
-                                <button class="form-signup-button-submit" type="submit" name="as-submit">Salvare modificari</button>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="group">
+                                    <div class="form-login-forgot-password">
+                                        <?php
+                                        if (isset($_GET["newpwd"])) {
+                                            if ($_GET["newpwd"] == "passwordupdated") {
+                                                echo '<p class="help-block">Parola dumneavoastra a fost resetata!</p>';
+                                            }
+                                        }
+                                        ?>
+                                        <a class="forgot-password" href="reset-password.php">
+                                                Resetare parola
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="group">
+                                    <div class="btn-already">
+                                        <!-- pop up pentru parola dinaintea eventualei schimbari de mai sus -->
+                                        <div class="form-signup-button confirmation_settings_profile">
+                                            <button class="form-signup-button-submit" type="submit" name="as-submit">Salvare modificari</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </fieldset>

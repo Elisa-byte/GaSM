@@ -59,7 +59,7 @@
 //                    }
                 ?>
                 <form class="form-login" method="POST" action="includes/signup.inc.php">
-                        <span class="form-logo"><i class="form-logo-img"></i></span>
+                        <span class="form-logo"><img src="../CSS/logo2-white.PNG" alt="logo-dark" class="img-logo"/></span>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="group">
@@ -110,13 +110,12 @@
                         <div class="col-2">
                             <div class="group">
                                 <div class="form-signup-respectare" data-validate="Respectati">
-                                    <span><br></span><span><br></span><span><br></span>
                                     <span>Respectati la scrierea parolei!</span>
                                     <ul class="requests">
-                                        <li>Minimumul lungimii parolei de 8 caractere</li>
-                                        <li>Macar o litere mare</li>
-                                        <li>Macar o litere mica</li>
-                                        <li>Macar o cifra</li>
+                                        <li class="requests">Minimumul lungimii parolei de 8 caractere</li>
+                                        <li class="requests">Macar o litere mare</li>
+                                        <li class="requests">Macar o litere mica</li>
+                                        <li class="requests">Macar o cifra</li>
                                     </ul>
                                 </div>
                             </div>
@@ -126,7 +125,7 @@
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="group">
-                                <label class="label">Categorie</label>
+                                <label class="form-selected-input">Categorie</label>
                                 <div class="selection-category-person">
                                     <select name="category" tabindex="-1" class="selection-category-hidden-accessible" aria-hidden="true">
                                         <option disabled="disabled" selected="selected">Alegeti o optiune</option>
@@ -138,7 +137,7 @@
                         </div>
                         <div class="col-2">
                             <div class="group">
-                                <label class="label">Locatie</label>
+                                <label class="form-selected-input">Locatie</label>
                                 <div class="selection-location-person">
                                     <select name="location" tabindex="-1" class="selection-location-hidden-accessible" aria-hidden="true">
                                         <option disabled="disabled" selected="selected">Alegeti o optiune</option>
@@ -149,12 +148,22 @@
                         </div>
                     </div>
             </div>
-            <div class="btn-already">
-                <div class="form-signup-button">
-                    <button class="form-signup-button-submit" type="submit" name="signup-submit">Inregistrati-va</button>
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="group">
+                        <div class="form-signup-button">
+                            <button class="form-login-button-submit" type="submit" name="log-in-submit">
+                                Inregistrare
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-signup-already-a-user">
-                    <button class="already-a-user" type="submit"><a href="login.php">Aveti deja cont?</a></button>
+                <div class="col-2">
+                    <div class="group">
+                        <div class="form-signup-button">
+                            <button class="form-login-button-submit" ><a href="login.php" class="form-login-button-submit ">Aveti deja cont?</a></button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="accept-all" data-validate="accept-all">

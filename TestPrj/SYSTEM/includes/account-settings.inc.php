@@ -93,7 +93,7 @@ if (isset($_POST['as-submit'])) {
         }
     }
 
-    mysqli_stmt_close($stmt);
+    //mysqli_stmt_close($stmt);
     mysqli_close($conn);
 } else {
     header("Location: ../account-settings.php");

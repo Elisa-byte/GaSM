@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_POST['log-in-submit'])){
     require 'dbh.inc.php';
     $uidmail = $_POST['uidmail'];
@@ -55,7 +54,6 @@ if(isset($_POST['log-in-submit'])){
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
     }
-
 }
 else{
     header("Location: ../login.php");
