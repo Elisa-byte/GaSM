@@ -577,31 +577,22 @@ html {
     margin-bottom: .5rem;
 }
 
-.form-login-button {
-    width: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 35px;
-}
-
-.form-signup-button {
-    width: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 50px;
-}
-
 .requests{
     font-size: 15px;
 }
 
+.form-login-button {
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 55px;
+}
 .form-login-button-submit {
     background-color: rgba(217,224,218, 0.9); /* Green */
     border: none;
-    color: #4CAF50;
-    padding: 10px 25px;
+    color: #003f0b;
+    padding: 20px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -613,37 +604,73 @@ html {
     justify-content: center;
     align-items: center;
     /*padding: 0 10px;*/
-    min-width: 100px;
+    min-width: 170px;
     height: 50px;
     border-radius: 5px;
 }
-
 .form-login-button-submit:hover{
     background-color: rgba(66,103,72, 0.5);
     color: white;
 }
 
-.form-signup-button,
-.form-signup-already-a-user {
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-signup-button-submit,
-.already-a-user {
+.form-back{
+    background-color: rgba(84,64,60, 0.9); /* Brown */
+    border: none;
+    color: #3b2d2a;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
-    color: #555555;
+    transition-duration: 0.4s;
+    cursor: pointer;
     line-height: 1.2;
     display: flex;
     justify-content: center;
-    align-self: center;
-    padding: 0 10px;
+    align-items: center;
+    /*padding: 0 10px;*/
     min-width: 120px;
-    height: 40px;
-    border-radius: 25px;
+    height: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+.form-back:hover{
+    background-color: rgba(118,90,84, 0.5);
+    color: white;
+}
+
+
+.form-signup-button-submit:hover{
+    background-color: rgba(66,103,72, 0.5);
+    color: white;
+}
+
+.form-signup-button-submit {
+    background-color: rgba(179,184,184, 0.9); /* Green */
+    border: none;
+    color: #003f0b;
+    padding: 10px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 0 10px;*/
+    min-width: 170px;
+    height: 50px;
+    border-radius: 5px;
+}
+.form-signup-button {
+    width: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 100px;
 }
 /*   BUTTON RESET PWD*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:900');
@@ -757,14 +784,12 @@ a {
 
 /*  -- ACCOUNT SETTINGS -- */
 
-.image_avatar_settings_profile {
+#profileDisplay {
+    vertical-align: middle;
+    width: 40%;
+    height: 40%;
     border-radius: 50%;
-    padding-left: 0.5em;
-}
-
-.profile_settings_avatar_image {
-    left: 0;
-    padding-bottom: 1em;
+    margin-bottom: 30px;
     display: flex;
     justify-self: center;
     align-self: center;
@@ -773,7 +798,6 @@ a {
 .fieldset-AS {
     background-color: rgba(255, 255, 255, 0.5);
 }
-
 
 /*  --  R A P O R T  -- */
 
@@ -844,41 +868,14 @@ a {
 
 /* MOBILE DEVICES */
 
-@media only screen and (max-width: 1182px) {
+@media only screen and (max-width: 550px) {
     .main-content {
-        width: 90%;
+        width: 100%;
     }
-    .top-nav,
-    .top-nav__login,
-    #profile-button {
-        display: none;
+    .row-space {
+        display: block;
     }
-    .top-bar {
-        justify-content: space-between;
-    }
-    #mobile-menu {
-        display: inherit;
-    }
-    #overlay-menu {
-        height: 100vh;
-        width: 100vw;
-        background: #420601;
-        z-index: 2;
-        visibility: hidden;
-        position: fixed;
-        display: inherit;
-    }
-    #overlay-checkbox:checked~#overlay-menu {
-        visibility: visible;
-        animation: opacity 200ms ease-in-out normal;
-    }
-    #mobile-menu:hover {
-        transform: rotate(90deg);
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    .main-content {
+    .col-2 {
         width: 100%;
     }
 }

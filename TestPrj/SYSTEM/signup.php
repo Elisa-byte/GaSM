@@ -152,7 +152,7 @@
                 <div class="col-2">
                     <div class="group">
                         <div class="form-signup-button">
-                            <button class="form-login-button-submit" type="submit" name="log-in-submit">
+                            <button class="form-signup-button-submit" type="submit" name="signup-submit">
                                 Inregistrare
                             </button>
                         </div>
@@ -161,7 +161,7 @@
                 <div class="col-2">
                     <div class="group">
                         <div class="form-signup-button">
-                            <button class="form-login-button-submit" ><a href="login.php" class="form-login-button-submit ">Aveti deja cont?</a></button>
+                            <button class="form-signup-button-submit" ><a href="login.php" class="form-signup-button-submit ">Aveti deja cont?</a></button>
                         </div>
                     </div>
                 </div>
@@ -171,6 +171,8 @@
                     de acord cu crearea unui cont GaSM si sunteti de acord cu <a class="termeni-conditii" href="#">Termeni si conditii</a> si
                     <a class="politica-de-confidentialitate" href="#">Politica de confidentialitate</a></label>
                 <p class="accept-all-copy-rights">&copy; 2020 GaSM.com</p>
+
+                <a href="index.php" class="form-back"> << Inapoi Acasa</a>
             </div>
             </form>
         </div>

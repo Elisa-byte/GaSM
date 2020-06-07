@@ -131,11 +131,8 @@ if (!isset($_SESSION['userId'])) {
                         </div>
                         <div class="btn-already">
                             <!-- pop up pentru parola dinaintea eventualei schimbari de mai sus -->
-                            <div class="form-signup-button confirmation_settings_profile">
-                                <button class="form-signup-button-submit" onclick="goBack()">Inapoi</button>
-                                <script>
-                                    function goBack() { window.history.back();}
-                                </script>
+                            <div class="form-login-forgot-password">
+                                <a href="index.php" class="form-back"> << Inapoi Acasa</a>
                             </div>
                         </div>
                     </fieldset>

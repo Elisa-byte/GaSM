@@ -8,10 +8,13 @@ if (isset($_POST['as-submit'])) {
     $phone = $_POST['phone'];
     $mail = $_POST['mail'];
     $username = $_POST['username'];
+    $location = "";
+    $category = "";
 //    $category = $_POST['category'];
 //    $location = $_POST['location'];
 
     $idUsers = $_SESSION['userId'];
+    $stmt = mysqli_stmt_init($conn);
     if (empty($fname) != 1) {
         if (!preg_match("/^[A-Za-z]+$/", $fname)) {
             header("Location: ../account-settings.php?error=invalidfname&lname=" . $lname . "&phone=" . $phone . "&mail=" . $mail . "&username=" . $username . "&category=" . $category . "&location=" . $location);
@@ -81,7 +84,7 @@ if (isset($_POST['as-submit'])) {
             header("Location: ../account-settings.php?error=invalidusername&fname=" . $fname . "&lname=" . $lname . "&phone=" . $phone . "&mail=" . $mail . "&category=" . $category . "&location=" . $location);
             exit();
         } else {
-            $sql = "UPDATE gasm.usersv2 SET uidlUsers=? WHERE idUsers=?;";
+            $sql = "UPDATE gasm.usersv2 SET uidUsers=? WHERE idUsers=?;";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
                 header("Location: ../account-settings.php?error=sqlerror");
@@ -92,9 +95,44 @@ if (isset($_POST['as-submit'])) {
             }
         }
     }
+    if (empty($location) != 1) {
+        $sql = "UPDATE gasm.usersv2 SET locationUsers=? WHERE idUsers=?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("Location: ../account-settings.php?error=sqlerror");
+            exit();
+        } else {
+            mysqli_stmt_bind_param($stmt, "si", $location, $idUsers);
+            mysqli_stmt_execute($stmt);
+        }
+    }
+    if (empty($location) != 1) {
+        $sql = "UPDATE gasm.usersv2 SET categoryUsers=? WHERE idUsers=?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("Location: ../account-settings.php?error=sqlerror");
+            exit();
+        } else {
+            mysqli_stmt_bind_param($stmt, "si", $category, $idUsers);
+            mysqli_stmt_execute($stmt);
+        }
+    }
 
-    //mysqli_stmt_close($stmt);
+    $stmt = mysqli_stmt_init($conn);
+    $filename = $_FILES['img']['name'];
+    $tmpname = $_FILES['img']['tmp_name'];
+    $filetype = $_FILES['img']['type'];
+    $name = addslashes($filename);
+    $tmp = addslashes(file_get_contents($tmpname));
+    $sql = "update gasm.usersv2 set profileUsers='$tmp' where idusers='$idUsers';";
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_execute($stmt);
+//  echo $tmp;
+    //display
+    //echo $idUsers;
+   // mysqli_stmt_close($stmt);
     mysqli_close($conn);
+    header("Location: ../account-settings.php");
 } else {
     header("Location: ../account-settings.php");
     exit();

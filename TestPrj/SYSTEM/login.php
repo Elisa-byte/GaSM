@@ -109,6 +109,7 @@ if (isset($_POST["log-in-submit"])) {
                     <a class="forgot-password" href="reset-password.php">
                         V-ati uitat parola?
                     </a>
+                    <a href="index.php" class="form-back"> << Inapoi Acasa</a>
                 </div>
             </form>
         </div>

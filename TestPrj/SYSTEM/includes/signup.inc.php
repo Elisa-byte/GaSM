@@ -83,14 +83,15 @@ if(isset($_POST['signup-submit'])){
 //                if(!mysqli_stmt_prepare($stmt, $sql)){
 //                    header("Location: ../signup.php?error=sqlerror");
 //                    exit();
-//                }
+ //                }
                 else{
                     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
                     mysqli_stmt_bind_param($stmt, "sssssiss", $username, $fname, $lname, $mail, $hashedPwd, $phone, $category, $location);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_store_result($stmt);
-                    header("Location: ../index.php");
+
+                    header("Location: ../login.php");
                     exit();
                 }
             }
