@@ -1,5 +1,5 @@
-<?php
-
+<?php 
+// $conn = mysqli_connect("localhost", "root", "test", "blog_samples");
 $servername = "localhost";
 $dBUsername = "root";
 $dBPassword = "";
