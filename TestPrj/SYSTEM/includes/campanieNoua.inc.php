@@ -13,13 +13,14 @@
         $location_address = $_GET['location_address'];
         $phone = $_GET['phone'];
         $email = $_GET['email'];
+        $date = (new \DateTime())->format('Y-m-d H:i:s');
         $sql="INSERT INTO campanii (name, description, type, category, duration, begining, hour, 
-        location, location_address, phone, email)
+        location, location_address, phone, email, date)
         VALUES ('$name',
         '$description',
         '$type',
         '$category','$duration','$begining','$hour',
-        '$location','$location_address','$phone','$email')";
+        '$location','$location_address','$phone','$email','$date')";
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {
