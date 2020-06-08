@@ -81,8 +81,135 @@
         }
         if(!empty($_POST["location"]))
         {
-            $location = $_POST['location'];
-            $LOCATION = $location;
+            switch ($_POST['location']) {
+                case "42":
+                    $location = "Alba";
+                    break;
+                case "1":
+                    $location = "Arad";
+                    break;
+                case "2":
+                    $location = "Arges";
+                    break;
+                case "3":
+                    $location = "Bacau";
+                    break;
+                case "4":
+                    $location = "Bihor";
+                    break;
+                case "5":
+                    $location = "Bistrita-Nasaud";
+                    break;
+                case "6":
+                    $location = "Botosani";
+                    break;
+                case "7":
+                    $location = "Braila";
+                    break;
+                case "8":
+                    $location = "Brasov";
+                    break;
+                case "9":
+                    $location = "BUCURESTI";
+                    break;
+                case "10":
+                    $location = "Buzau";
+                    break;
+                case "11":
+                    $location = "Calarasi";
+                    break;
+                case "12":
+                    $location = "Caras-Severin";
+                    break;
+                case "13":
+                    $location = "Cluj";
+                    break;
+                case "14":
+                    $location = "Constanta";
+                    break;
+                case "15":
+                    $location = "Covasna";
+                    break;
+                case "16":
+                    $location = "Dambovita";
+                    break;
+                case "17":
+                    $location = "Dolj";
+                    break;
+                case "18":
+                    $location = "Galati";
+                    break;
+                case "19":
+                    $location = "Giurgiu";
+                    break;
+                case "20":
+                    $location = "Gorj";
+                    break;
+                case "21":
+                    $location = "Harghita";
+                    break;
+                case "22":
+                    $location = "Hunedoara";
+                    break;
+                case "23":
+                    $location = "Ialomita";
+                    break;
+                case "24":
+                    $location = "Iasi";
+                    break;
+                case "25":
+                    $location = "Ilfov";
+                    break;
+                case "26":
+                    $location = "Maramures";
+                    break;
+                case "27":
+                    $location = "Mehedinti";
+                    break;
+                case "28":
+                    $location = "Mures";
+                    break;
+                case "29":
+                    $location = "Neamt";
+                    break;
+                case "30":
+                    $location = "Olt";
+                    break;
+                case "31":
+                    $location = "Prahova";
+                    break;
+                case "32":
+                    $location = "Salaj";
+                    break;
+                case "33":
+                    $location = "Satu Mare";
+                    break;
+                case "34":
+                    $location = "Sibiu";
+                    break;
+                case "35":
+                    $location = "Suceava";
+                    break;
+                case "36":
+                    $location = "Teleorman";
+                    break;
+                case "37":
+                    $location = "Timis";
+                    break;
+                case "38":
+                    $location = "Tulcea";
+                    break;
+                case "39":
+                    $location = "Valcea";
+                    break;
+                case "40":
+                    $location = "Vaslui";
+                    break;
+                case "41":
+                    $location = "Vrancea";
+                    break;
+              }
+            $LOCATION = $_POST['location'];
         }
         else
         {
