@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="formularCampanie.css">
+    <link rel="stylesheet" type="text/css" href="im.css">
     <title>Formular Campanie</title>
 </head>
 
 <body>
     <div class="bg-img">
-        <form class="form-campaign" method="POST" action="includes/formularCampanie.inc.php">
+        <form class="form-campaign" method="POST" action="includes/formularCampanie.inc.php" enctype="multipart/form-data">
             <h1 class="form-title"> Formular de inregistrare campanie</h1>
             <div class="two-rows">
                 <div class="one-column">
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <input class="form-input" type="text" name="location-address" placeholder="Adresa locatiei">
-                    <input class="form-input" type="text" name="event-date" placeholder="Data evenimentului(ex:2000.08.31)" pattern="(?:19|20)[0-9]{2}.(?:(?:0[1-9]|1[0-2]).(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required />
+                    <input class="form-input" type="text" name="event-date" placeholder="Data evenimentului(ex:2000.08.31)" pattern="(?:19|20)[0-9]{2}.(?:(?:0[1-9]|1[0-2]).(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"/>
                 </div>
             </div>
             <h4 class="form-title">Date de contact</h4>
@@ -107,6 +107,30 @@
                 <div class="one-column">
                     <input class="form-input" type="text" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 </div>
+            </div>
+            <?php
+            if(count($_FILES) > 0) {
+                echo "OOO";
+                if(is_uploaded_file($_FILES['userImage']['tmp_name'])) {
+                    require_once "db.inc.php";
+                    $imgData =addslashes(file_get_contents($_FILES['userImage']['tmp_name']));
+	                $imageProperties = getimageSize($_FILES['userImage']['tmp_name']);
+	
+	                $sql = "INSERT INTO output_images(imageType ,imageData)
+	                VALUES('{$imageProperties['mime']}', '{$imgData}')";
+    	            $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
+	                if(isset($current_id)) {
+		                header("Location: listImg.php");
+	                }
+                }
+            }
+            ?>
+            <div class ="frmImageUpload">
+                    <label>Incarca o imagine pentru Campanie:</label><br/>
+                    <input name="userImage" type="file" class="inputFile" />
+                    <!-- <input type="submit" value="Submit image" class="btnSubmit" name="submitImg/> -->
+            </div>
+            <div class="space">
             </div>
             <button type="submit" class="btn" name="signup-campanie">Inregistrare</button>
         </form>

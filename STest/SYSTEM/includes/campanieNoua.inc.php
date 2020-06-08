@@ -14,14 +14,15 @@
         $phone = $_GET['phone'];
         $email = $_GET['email'];
         $event_date = $_GET['event_date'];
+        $imageId = $_GET['imageId'];
         $date = (new \DateTime())->format('Y-m-d H:i:s');
         $sql="INSERT INTO campanii (name, description, type, category, duration, begining, hour, 
-        location, location_address, phone, email, date, event_date)
+        location, location_address, phone, email, date, event_date, imageId)
         VALUES ('$name',
         '$description',
         '$type',
         '$category','$duration','$begining','$hour',
-        '$location','$location_address','$phone','$email','$date','$event_date')";
+        '$location','$location_address','$phone','$email','$date','$event_date','$imageId')";
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {

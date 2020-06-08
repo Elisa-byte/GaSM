@@ -113,6 +113,14 @@
         }
         
         // require_once('includes/formularCampanie.inc.php');
+        if(!empty($_FILES))
+        {
+            $IM = "YES";
+        }
+        else
+        {
+            $IM ="NO";
+        }
     ?>
     <ol>
         <li><em>Name:</em> <?php echo $name;?></li>
@@ -125,6 +133,7 @@
         <li><em>Category:</em> <?php echo $category;?></li>
         <li><em>Location:</em> <?php echo $location;?></li>
         <li><em>Location_address:</em> <?php echo $location_address;?></li>
+        <li><em>Image for campaign:</em> <?php echo $IM;?></li>
         <li><em>Phone:</em> <?php echo $phone;?></li>
         <li><em>Email:</em> <?php echo $email;?></li>
     </ol>
@@ -159,6 +168,27 @@
             var phone = "<?php echo $phone; ?>";
             var email = "<?php echo $email; ?>";
             var event_date = "<?php echo $EVENT_DATE; ?>";
+            <?php
+            $current_id = "";
+            if(!empty($_FILES))
+            {
+                if(count($_FILES) > 0) {
+                    if(is_uploaded_file($_FILES['userImage']['tmp_name'])) {
+                        require_once "dbh.inc.php";
+                        $imgData =addslashes(file_get_contents($_FILES['userImage']['tmp_name']));
+                        $imageProperties = getimageSize($_FILES['userImage']['tmp_name']);
+                    
+                        $sql = "INSERT INTO campanii_images(imageType ,imageData)
+                        VALUES('{$imageProperties['mime']}', '{$imgData}')";
+                        $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
+                        if(isset($current_id)) {
+                            header("./listImages.php");
+                        }
+                    }
+                }
+            }
+            ?>
+            var imageId = "<?php echo $current_id;?>";
 
             $.ajax({
                 url: './campanieNoua.inc.php?&name=' + name +
@@ -167,7 +197,7 @@
                  event_date + '&duration=' + duration + '&begining=' + 
                  begining + '&hour=' + hour + '&location=' + 
                  location + '&location_address=' + location_address + '&phone=' + 
-                 phone + '&email=' + email,
+                 phone + '&email=' + email + "&imageId=" + imageId,
                 type: 'GET', // get method
                 data: 'download='+val+name,
                   success: function(data) {
