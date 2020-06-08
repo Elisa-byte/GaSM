@@ -6,7 +6,7 @@
 <HTML>
 <HEAD>
 <TITLE>List BLOB Images</TITLE>
-<link href="../im.css" rel="stylesheet" type="text/css" />
+<link href="../formularCampanie.css" rel="stylesheet" type="text/css" />
 </HEAD>
 <BODY>
 <?php

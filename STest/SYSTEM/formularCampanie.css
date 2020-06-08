@@ -161,3 +161,40 @@ input:hover {
     background: transparent;
     padding: 0 5px 0 38px;
 }
+
+img {
+	padding: 3px;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);border: 1px solid #FFFFFF;border-radius: 4px; margin: 20px;
+}
+
+.frmImageUpload {
+    background-color: rgb(31, 15, 2);
+    width: 40%;
+    padding:10px;
+    opacity: 0.9;
+}
+
+.frmImageUpload:hover {
+    opacity: 1;
+}
+
+.frmImageUpload label{
+    font-weight: bold;
+    color: #A0A0A0;
+}
+
+.btnSubmit {
+    background-color: #4CAF50;
+    padding:4px;
+    border: #3FA849 1px solid;
+    color: #FFFFFF;
+    opacity: 90%;
+}
+
+.inputFile {
+    padding: 3px;
+    background-color: #FFFFFF;
+}
+
+.space {
+    padding: 10px;
+}
