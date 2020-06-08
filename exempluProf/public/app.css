@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body * {
+    font-family: inherit;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 { 
+    font-size: 2.5em;
+}
+
+a {
+    font-size: 1.5em;
+    text-decoration: none;
+    font-family: inherit;
+    border-bottom: 2px solid currentColor;
+    color: rgb(3, 169, 244);
+    font-weight: bold;
+}
+
+header {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 0.5em 0;
+    background: rgb(3, 169, 244);
+}
+
+header h1 {
+    margin: 0;
+}
+
+header a {
+    color: #000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2em;
+}
+.home-page main {
+    display: flex;
+    margin-top: 10em;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.home-page img {
+    max-width: 10em;
+}
+
+.home-page main a {
+    text-align: center;
+}
+
+/* Product page */
+
+.product-page main {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    min-height: calc(100vh - 7em);
+}
+
+.product-page img {
+    max-width: 50%;
+    max-height: 50vh;
+}
+
+.not-found-page {
+    text-align: center;
+    padding: 0 3em;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-found-page h1 {
+    margin-top: 0;
+}
+
+.not-found-page a {
+    margin-top: 2em;
+}
+
+.not-found-page h3 {
+    font-weight: normal;
+}
+
