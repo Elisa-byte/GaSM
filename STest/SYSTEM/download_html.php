@@ -1,17 +1,5 @@
 <?php
-$servername = "localhost";
-$dBUsername = "root";
-$dBPassword = "";
-$dBName = "gasm";//users
-
-$conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
-
-if(!$conn){
-    die("Conexiune esuata: " . mysqli_connect_error());
-}
-
-$filename = "./file.html";
-$fp = fopen('php://output', 'w');
+require "includes/dbh.inc.php";
 
 $judeteToIDJud = array(
     "Alba" => "RO-AB",
@@ -58,6 +46,53 @@ $judeteToIDJud = array(
     "Bucuresti" => "RO-B",
 );
 
+$judete = [
+    "Alba",
+    "Arad",
+    "Arges",
+    "Bacau",
+    "Bihor",
+    "Bistrita-Nasaud",
+    "Botosani",
+    "Brasov",
+    "Braila",
+    "Buzau",
+    "Caras-Severin",
+    "Calarasi",
+    "Cluj",
+    "Constanta",
+    "Covasna",
+    "Dambovita",
+    "Dolj",
+    "Galati",
+    "Giurgiu",
+    "Gorj",
+    "Harghita",
+    "Hunedoara",
+    "Ialomita",
+    "Iasi",
+    "Ilfov",
+    "Maramures",
+    "Mehedinti",
+    "Mures",
+    "Neamt",
+    "Olt",
+    "Prahova",
+    "Satu Mare",
+    "Salaj",
+    "Sibiu",
+    "Suceava",
+    "Teleorman",
+    "Timis",
+    "Tulcea",
+    "Vaslui",
+    "Valcea",
+    "Vrancea",
+    "Bucuresti",
+];
+
+sort($judete);
+
 $judNrRapoarte = array(
     "RO-AB" => 0,
     "RO-AR" => 0,
@@ -102,9 +137,6 @@ $judNrRapoarte = array(
     "RO-VN" => 0,
     "RO-B" => 0
 );
-$var = ['Toate judetele care nu apar nu au avut niciun incident de raportare in perioada precizata!'];
-fputcsv($fp, $var);
-fputcsv($fp, ["</br>"]);
 if (isset($_GET['week']) || isset($_GET['date']) || isset($_GET['month'])) {
     if (isset($_GET['week']))  $getMaxRapoarte = "SELECT judetReport, COUNT(*) as nr FROM `report` where week(dateReport) = week('". date('Y-m-d', strtotime($_GET['week']))."') and year(dateReport) = year('". date('Y-m-d', strtotime($_GET['week']))."')  group by judetReport order by nr DESC;";
     else if (isset($_GET['month'])) $getMaxRapoarte = "SELECT judetReport, COUNT(*) as nr FROM `report` where month(dateReport) = month('". date('Y-m-d', strtotime($_GET['month']))."') and year(dateReport) = year('". date('Y-m-d', strtotime($_GET['month']))."')  group by judetReport order by nr DESC;";
@@ -114,19 +146,94 @@ if (isset($_GET['week']) || isset($_GET['date']) || isset($_GET['month'])) {
         $row = mysqli_fetch_assoc($result);
         $maxRapoarte = $row['nr'];
         $judNrRapoarte[$judeteToIDJud[$row['judetReport']]] = $row['nr'];
-        fputcsv($fp, $row + ["(nr de rapoarte)"]);
-        fputcsv($fp, ["</br>"]);
         while ($row = mysqli_fetch_assoc($result)) {
             $judNrRapoarte[$judeteToIDJud[$row['judetReport']]] = $row['nr'];
-            fputcsv($fp, $row + ["(nr de rapoarte)"]);
-            fputcsv($fp, ["</br>"]);
         }
     }
 }
-fclose($fp);
-
-header('Content-Type: text/html');
-header('Content-Disposition: attachment; filename="./file.html"');
-exit;
-echo "OK";
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>HTML Table With PHP</title>
+        <style>
+        .columns
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #report {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+        }
+
+        #report td, #report th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #report tr:nth-child(even){background-color: #f2f2f2;}
+
+        #report tr:hover {background-color: #ddd;}
+
+        #report th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="columns">
+    <!-- <div style="overflow-x:auto;"> -->
+        <table id="report">
+            
+            <tr>
+                <th>Judet</th>
+                <th>Nr.de raportari</th>
+            </tr>
+            <tr>
+            <?php for ($k = 0; $k < count($judete); $k++): ?>
+                <td><?php echo $judete[$k]; ?></td>
+                <td><?php echo $judNrRapoarte[$judeteToIDJud[$judete[$k]]]; ?></td>
+                <tr>
+            <?php endfor; ?>
+            </tr>
+        </table>
+    <!-- </div> -->
+    
+    <div id="piechart"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Draw the chart and set the chart values
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Judete', 'Nr. de rapoarte'],
+                <?php for ($k = 0; $k < count($judete); $k++): ?>
+                    ['<?php echo $judete[$k]; ?>', parseInt('<?php echo $judNrRapoarte[$judeteToIDJud[$judete[$k]]]; ?>')],
+                <?php endfor; ?>
+            ['Var', 0]
+        ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = { 'title':'','width': 750, 'height': 600};
+
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+    </script>
+    </div>
+    <!-- <a href="index.php" download="w3logo">Download</a> -->
+    </body>
+</html>

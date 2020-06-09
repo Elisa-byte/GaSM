@@ -1,15 +1,5 @@
 <?php
-$servername = "localhost";
-$dBUsername = "root";
-$dBPassword = "";
-$dBName = "gasm";//users
-
-$conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
-
-if(!$conn){
-    die("Conexiune esuata: " . mysqli_connect_error());
-}
-
+require "includes/dbh.inc.php";
 $filename = "./file.csv";
 $fp = fopen('php://output', 'w');
 
@@ -104,6 +94,7 @@ $judNrRapoarte = array(
 );
 $var = ["Toate judetele care nu apar nu au avut niciun incident de raportare in perioada precizata!"];
 fputcsv($fp, $var);
+fputcsv($fp, ["Judet","Nr. de raportari"]);
 if (isset($_GET['week']) || isset($_GET['date']) || isset($_GET['month'])) {
     if (isset($_GET['week']))  $getMaxRapoarte = "SELECT judetReport, COUNT(*) as nr FROM `report` where week(dateReport) = week('". date('Y-m-d', strtotime($_GET['week']))."') and year(dateReport) = year('". date('Y-m-d', strtotime($_GET['week']))."')  group by judetReport order by nr DESC;";
     else if (isset($_GET['month'])) $getMaxRapoarte = "SELECT judetReport, COUNT(*) as nr FROM `report` where month(dateReport) = month('". date('Y-m-d', strtotime($_GET['month']))."') and year(dateReport) = year('". date('Y-m-d', strtotime($_GET['month']))."')  group by judetReport order by nr DESC;";
@@ -113,10 +104,10 @@ if (isset($_GET['week']) || isset($_GET['date']) || isset($_GET['month'])) {
         $row = mysqli_fetch_assoc($result);
         $maxRapoarte = $row['nr'];
         $judNrRapoarte[$judeteToIDJud[$row['judetReport']]] = $row['nr'];
-        fputcsv($fp, $row + ["(nr de rapoarte)"]);
+        fputcsv($fp, $row);
         while ($row = mysqli_fetch_assoc($result)) {
             $judNrRapoarte[$judeteToIDJud[$row['judetReport']]] = $row['nr'];
-            fputcsv($fp, $row + ["(nr de rapoarte)"]);
+            fputcsv($fp, $row);
         }
     }
     fclose($fp);

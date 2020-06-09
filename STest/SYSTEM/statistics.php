@@ -447,89 +447,89 @@
         <!-- HTML -->
         <div id="chartdiv"></div>
     </main>
-    <!-- <input class="w3-button w3-black" type="button" value="Input Button">
-    <button class="w3-button w3-black">Button Button</button> -->
+    <div class="download-buttons">
     <a href="<?php
-if(isset($_GET['week']))
-{
-    $week = $_GET['week'];
-    $link="download_csv.php?&week=";
-}
-else
-    $week = "";
-if(isset($_GET['month']))
-{
-    $month = $_GET['month'];
-    $link="download_csv.php?&month=";
-}
-else
-    $month = "";
-if(isset($_GET['day']))
-{
-    $week = $_GET['day'];
-    $link="download_csv.php?&day=";
-}
-else
-    $day = "";
-echo $link;
-echo $week;
-echo $month;
-echo $day;
-?>"  class="w3-button w3-black">Download Statistics(CSV)</a>
+                if(isset($_GET['week']))
+                {
+                    $week = $_GET['week'];
+                    $link="download_csv.php?&week=";
+                }
+                else
+                    $week = "";
+                if(isset($_GET['month']))
+                {
+                    $month = $_GET['month'];
+                    $link="download_csv.php?&month=";
+                }
+                else
+                    $month = "";
+                if(isset($_GET['day']))
+                {
+                    $week = $_GET['day'];
+                    $link="download_csv.php?&day=";
+                }
+                else
+                    $day = "";
+                echo $link;
+                echo $week;
+                echo $month;
+                echo $day;
+            ?>"  class="shadow-button">Download Statistics(CSV)</a>
     <a href="<?php
-if(isset($_GET['week']))
-{
-    $week = $_GET['week'];
-    $link="download_pdf.php?&week=";
-}
-else
-    $week = "";
-if(isset($_GET['month']))
-{
-    $month = $_GET['month'];
-    $link="download_pdf.php?&month=";
-}
-else
-    $month = "";
-if(isset($_GET['day']))
-{
-    $week = $_GET['day'];
-    $link="download_pdf.php?&day=";
-}
-else
-    $day = "";
-echo $link;
-echo $week;
-echo $month;
-echo $day;
-?>"  class="w3-button w3-black">Download Statistics(PDF)</a>
-<a href="<?php
-if(isset($_GET['week']))
-{
-    $week = $_GET['week'];
-    $link="download_html.php?&week=";
-}
-else
-    $week = "";
-if(isset($_GET['month']))
-{
-    $month = $_GET['month'];
-    $link="download_html.php?&month=";
-}
-else
-    $month = "";
-if(isset($_GET['day']))
-{
-    $week = $_GET['day'];
-    $link="download_html.php?&day=";
-}
-else
-    $day = "";
-echo $link;
-echo $week;
-echo $month;
-echo $day;
-?>"  class="w3-button w3-black">Download Statistics(HTML)</a>
+                if(isset($_GET['week']))
+                {
+                    $week = $_GET['week'];
+                    $link="download_pdf.php?&week=";
+                }
+                else
+                    $week = "";
+                if(isset($_GET['month']))
+                {
+                    $month = $_GET['month'];
+                    $link="download_pdf.php?&month=";
+                }
+                else
+                    $month = "";
+                if(isset($_GET['day']))
+                {
+                    $week = $_GET['day'];
+                    $link="download_pdf.php?&day=";
+                }
+                else
+                    $day = "";
+                echo $link;
+                echo $week;
+                echo $month;
+                echo $day;
+            ?>"  class="shadow-button">Download Statistics(PDF)</a>
+    <a href="<?php
+                if(isset($_GET['week']))
+                {
+                    $week = $_GET['week'];
+                    $link="download_html.php?&week=";
+                }
+                else
+                    $week = "";
+                if(isset($_GET['month']))
+                {
+                    $month = $_GET['month'];
+                    $link="download_html.php?&month=";
+                }
+                else
+                    $month = "";
+                if(isset($_GET['day']))
+                {
+                    $week = $_GET['day'];
+                    $link="download_html.php?&day=";
+                }
+                else
+                    $day = "";
+                echo $link;
+                echo $week;
+                echo $month;
+                echo $day;
+            ?>"  class="shadow-button" download="report.html">Download Statistics(HTML)</a>
+    </div>
     <?php require_once 'C:\xampp\htdocs\GaSM\exempluProf\app\views\includes\footer.php' ?>
 
 </body>

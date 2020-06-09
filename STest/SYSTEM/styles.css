@@ -2,14 +2,6 @@
 
 /* UTIL */
 
-.download-button
-{   
-    background-color: #34905c;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .center-text {
     display: block;
     text-align: center;
@@ -57,6 +49,15 @@
     font-weight: 600;
 }
 
+/* Shanti -  new added part */
+
+.download-buttons
+{
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
 
 /* TOP NAVIGATION */
 
@@ -318,7 +319,6 @@ body {
     height: 20em;
     color: white;
 }
-
 
 /* FOOTER */
 

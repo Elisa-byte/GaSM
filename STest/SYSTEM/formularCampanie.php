@@ -110,7 +110,6 @@
             </div>
             <?php
             if(count($_FILES) > 0) {
-                echo "OOO";
                 if(is_uploaded_file($_FILES['userImage']['tmp_name'])) {
                     require_once "db.inc.php";
                     $imgData =addslashes(file_get_contents($_FILES['userImage']['tmp_name']));
