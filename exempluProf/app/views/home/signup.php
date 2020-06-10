@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <base href = "http://localhost/exempluProf/" /> -->
+    <base href = "<?php echo $base_location ?>" />
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/login.css">
+    <script src="JavaScript/viewPassword.js"></script>
+    <title>Inregistreaza_te</title>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="container-signup">
+            <div class="card-4">
+                <div class="wrap-signup">
+                    <!-- adaug logo-->
+                    <h2 class="form-title">Formular de inregistrare</h2>
+                    <form class="form-login" method="POST">
+                        <span class="form-logo">
+                            <i class="form-logo-img"></i>
+                        </span>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="group">
+                                    <input class="form-input" type="text" name="name" placeholder="Nume">
+                                    <span class="form-span" data-placeholder="😃‍"></span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="group">
+                                    <input class="form-input" type="text" name="prename" placeholder="Prenume">
+                                    <span class="form-span" data-placeholder="😃‍"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="group">
+                                    <input class="form-input" type="text" name="phone" placeholder="Numarul de telefon">
+                                    <span class="form-span" data-placeholder="📞‍"></span>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="group">
+                                    <input class="form-input" type="text" name="phone" placeholder="Email">
+                                    <span class="form-span" data-placeholder="📩"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="group">
+                                    <input class="form-input" type="text" name="phone" placeholder="Username">
+                                    <span class="form-span" data-placeholder="🤩‍"></span>
+                                    <div class="form-signup-respectare" data-validate="Respectati">
+                                        <span>Respectati la scrierea parolei!</span>
+                                        <ul class="requests">
+                                            <li>Minimumul lungimii parolei de 8 caractere</li>
+                                            <li>Macar o litere mare</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="group">
+                                    <input class="form-input" type="password" name="password" placeholder="Parola">
+                                    <span class="form-span" data-placeholder="🧷"></span>
+                                </div>
+                                <!-- de pus "show password"-->
+                                <div class="form-signup-respectare" data-validate="Respectati">
+                                    <label><br></label>
+                                    <ul class="requests">
+                                        <li>Macar o litere mica</li>
+                                        <li>Macar o cifra</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="group">
+                                    <label class="label">Categorie</label>
+                                    <div class="selection-category-person">
+                                        <select name="category" tabindex="-1" class="selection-category-hidden-accessible" aria-hidden="true">
+                                            <option disabled="disabled" selected="selected">Alegeti o optiune</option>
+                                            <option value="1">Cetatean</option>
+                                            <option value="2">Personal autorizat</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="group">
+                                    <label class="label">Locatie</label>
+                                    <div class="selection-location-person">
+                                        <select name="location" tabindex="-1" class="selection-location-hidden-accessible" aria-hidden="true">
+                                            <option disabled="disabled" selected="selected">Alegeti o optiune</option>
+                                            <option value="42">Alba</option> <option value="1">Arad</option> <option value="2">Arges</option> <option value="3">Bacau</option> <option value="4">Bihor</option> <option value="5">Bistrita-Nasaud</option> <option value="6">Botosani</option> <option value="7">Braila</option> <option value="8">Brasov</option> <option value="9">BUCURESTI</option> <option value="10">Buzau</option> <option value="11">Calarasi</option> <option value="12">Caras-Severin</option> <option value="13">Cluj</option> <option value="14">Constanta</option> <option value="15">Covasna</option> <option value="16">Dambovita</option> <option value="17">Dolj</option> <option value="18">Galati</option> <option value="19">Giurgiu</option> <option value="20">Gorj</option> <option value="21">Harghita</option> <option value="22">Hunedoara</option> <option value="23">Ialomita</option> <option value="24">Iasi</option> <option value="25">Ilfov</option> <option value="26">Maramures</option> <option value="27">Mehedinti</option> <option value="28">Mures</option> <option value="29">Neamt</option> <option value="30">Olt</option> <option value="31">Prahova</option> <option value="32">Salaj</option> <option value="33">Satu Mare</option> <option value="34">Sibiu</option> <option value="35">Suceava</option> <option value="36">Teleorman</option> <option value="37">Timis</option> <option value="38">Tulcea</option> <option value="39">Valcea</option> <option value="40">Vaslui</option> <option value="41">Vrancea</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="btn-already">
+                    <div class="form-signup-button">
+                        <button class="form-signup-button-submit" type="submit">Inregistrati-va</button>
+                    </div>
+                    <div class="form-signup-already-a-user">
+                        <button class="already-a-user" type="submit">Aveti deja cont?</button>
+                    </div>
+                </div>
+                <div class="accept-all" data-validate="accept-all">
+                    <label class="accept-all-attention">Prin apasarea butonul "Inregistrati-va", sunteti 
+                       de acord cu crearea unui cont GaSM si sunteti de acord cu <a class="termeni-conditii" href="#">Termeni si conditii</a> si 
+                       <a class="politica-de-confidentialitate" href="#">Politica de confidentialitate</a></label>
+                    <p class="accept-all-copy-rights">&copy; 2020 GaSM.com</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

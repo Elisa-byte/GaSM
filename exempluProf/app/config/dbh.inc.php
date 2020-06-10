@@ -1,5 +1,5 @@
-<?php 
-// $conn = mysqli_connect("localhost", "root", "test", "blog_samples");
+<?php
+
 $servername = "localhost";
 $dBUsername = "root";
 $dBPassword = "";
@@ -10,4 +10,3 @@ $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 if(!$conn){
     die("Conexiune esuata: " . mysqli_connect_error());
 }
-?>
