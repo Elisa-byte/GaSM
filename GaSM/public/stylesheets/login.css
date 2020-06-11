@@ -1,0 +1,987 @@
+.main-content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* * {
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 0;
+}
+div {
+    display: block;
+} */
+
+body,
+html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    /*font-weight: 400;*/
+    /*font-size: 14px;*/
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent
+}
+
+.container-login {
+    background-image: url("../img/logo-dark.PNG");
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.container-login::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.container-signup {
+    background-image: url("../img/logo-white.PNG");
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.container-signup::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.container-report {
+    background-image: url("../img/logo-dark.PNG");
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+}
+
+.container-report::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(221, 220, 220, 0.5);
+}
+
+.container-account-settings {
+    background-image: url("../img/logo-dark.PNG");
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+}
+
+.container-account-settings::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(221, 220, 220, 0.5);
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.card-4 {
+    padding-top: 10px;
+    /* luat din raport*/
+    background-color: rgb(172, 172, 172, 0.65);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .15);
+}
+
+.wrap-signup {
+    padding: 40px 40px 27px 40px;
+}
+
+.wrap-login {
+    width: 500px;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 40px 40px 27px 40px;
+    background-color: rgba(30, 83, 9, 0.5);
+    /* background-image: linear-gradient(top, #074404e1, #855e25); */
+}
+
+.wrap-report {
+    padding: 40px 40px 27px 40px;
+    background-color: rgba(95, 156, 114, 0.719);
+}
+
+.wrap-account-settings {
+    padding: 40px 40px 27px 40px;
+    background-color: rgba(109, 74, 59, 0.719)
+}
+
+@media (max-width: 576px) {
+    .wrap-login {
+        padding: 55px 15px 37px 15px;
+    }
+}
+
+.form-title {
+    font-size: 30px;
+    font-weight: 400;
+    color: #6e3f14;
+    line-height: 1.2;
+    padding-bottom: 22px 22px;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    align-self: center;
+}
+
+.row-space {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+.row-space-model {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 2px;
+}
+
+.col-2-model {
+    width: calc((100% - 2px)/2);
+}
+
+.col-2 {
+    width: calc((100% - 2px)/2);
+}
+
+.group {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.9;
+    font-size: 20px;
+}
+
+:-ms-input-placeholder {
+    font-size: 15px;
+}
+
+.requests {
+    color: rgb(36, 71, 40);
+    font-size: 12px;
+    padding-left: 15px;
+}
+
+.form-login {
+    width: 100%;
+}
+
+.form-logo {
+    font-size: 60px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.img-logo {
+    height: 1.2em;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    position: relative;
+    margin-right: 5px;
+    outline: none;
+    overflow: visible;
+    width: 100%;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    border: none;
+    border-bottom: 5px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: white;
+    line-height: 1.2;
+    display: block;
+    /*display: block; -deoarece nu mergeau padding-urile de la celalte div-uri din form */
+    /*display: inline;*/
+    height: 45px;
+    width: 87%;
+    background: transparent;
+    padding: 0 0 0 20px;
+}
+
+.form-input-profile {
+    position: relative;
+    margin-right: 5px;
+    outline: none;
+    overflow: visible;
+    width: 100%;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    border: none;
+    border-bottom: 5px solid rgba(109, 83, 64, 0.5);
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: white;
+    line-height: 1.2;
+    display: block;
+    /*display: block; -deoarece nu mergeau padding-urile de la celalte div-uri din form */
+    /*display: inline;*/
+    height: 45px;
+    width: 87%;
+    background: transparent;
+    padding: 0 0 0 20px;
+}
+
+.form-selected-input {
+    position: relative;
+    outline: none;
+    overflow: visible;
+    width: 100%;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    border: none;
+    font-size: 17px;
+    color: white;
+    line-height: 1.2;
+    display: block;
+    /*display: block; -deoarece nu mergeau padding-urile de la celalte div-uri din form */
+    /*display: inline;*/
+    background: transparent;
+    padding: 0 0 0 20px;
+}
+
+.form-input- {
+    position: relative;
+    margin-right: 8px;
+    margin-left: 8px;
+    outline: none;
+    overflow: visible;
+    width: 100%;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    border: none;
+    /*border-bottom: 5px solid rgba(255, 255, 255, 0.5);*/
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: white;
+    line-height: 1.2;
+    /*display: block; -deoarece nu mergeau padding-urile de la celalte div-uri din form */
+    display: inline;
+    height: 45px;
+    width: 95%;
+    /*padding: 0 15px 0 40px;*/
+}
+
+.textarea-report {
+    width: calc(100% - 12px);
+    background: transparent;
+    padding: 0 0 0 20px;
+    /* // overflow: visible; */
+}
+
+.textarea-report:hover {
+    outline: none;
+    background: transparent;
+    border: 2px solid #003f0b;
+}
+
+.input-report-login-signup-AS {
+    margin-right: 8px;
+    margin-left: 8px;
+    outline: none;
+    border: none;
+    overflow: visible;
+    touch-action: manipulation;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    color: black;
+    text-align: start;
+}
+
+.form-span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    bottom: 7px;
+    right: 20px;
+    pointer-events: none;
+}
+
+.help-block {
+    position: relative;
+    display: block;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    padding-bottom: 5px;
+    color: rebeccapurple;
+    pointer-events: none;
+}
+
+.form-span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    background: #fff;
+}
+
+.form-span::after {
+    font-size: 22px;
+    color: #fff;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    padding-left: 5px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+
+/* --------- REMEMBER ME -----------*/
+
+.label-checkbox-remember-me {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    color: #6e3f14;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.label-checkbox-remember-me input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.label-checkbox-remember-me:hover input~.checkmark-remember-me {
+    background-color: #ccc;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.label-checkbox-remember-me input:checked~.checkmark-remember-me {
+    background-color: #745D4D;
+}
+
+
+/* Show the checkmark when checked */
+
+.label-checkbox-remember-me input:checked~.checkmark-remember-me:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.label-checkbox-remember-me .checkmark-remember-me:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark-remember-me:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark-remember-me {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: #eee;
+}
+
+.label-checkbox-show-pwd {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    color: #6e3f14;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.label-checkbox-show-pwd input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.label-checkbox-show-pwd:hover input~.checkmark-show-pwd {
+    background-color: #ccc;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.label-checkbox-show-pwd input:checked~.checkmark-show-pwd {
+    background-color: #003f0b;
+}
+
+
+/* Show the checkmark when checked */
+
+.label-checkbox-show-pwd input:checked~.checkmark-show-pwd:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.label-checkbox-show-pwd .checkmark-show-pwd:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark-show-pwd:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark-show-pwd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+}
+
+.form-login-show-pwd {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-login-remember-me {
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+
+.label-report {
+    margin: 0;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.requests {
+    font-size: 15px;
+}
+
+.form-login-button {
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 55px;
+}
+
+.form-login-button-submit {
+    background-color: rgba(217, 224, 218, 0.9);
+    /* Green */
+    border: none;
+    color: #003f0b;
+    padding: 20px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 0 10px;*/
+    min-width: 170px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.form-login-button-submit:hover {
+    background-color: rgba(66, 103, 72, 0.5);
+    color: white;
+}
+
+.form-back {
+    background-color: rgba(84, 64, 60, 0.9);
+    /* Brown */
+    border: none;
+    color: #3b2d2a;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 0 10px;*/
+    min-width: 120px;
+    height: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.form-back:hover {
+    background-color: rgba(118, 90, 84, 0.5);
+    color: white;
+}
+
+.form-signup-button-submit:hover {
+    background-color: rgba(66, 103, 72, 0.5);
+    color: white;
+}
+
+.form-signup-button-submit {
+    background-color: rgba(179, 184, 184, 0.9);
+    /* Green */
+    border: none;
+    color: #003f0b;
+    padding: 10px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 0 10px;*/
+    min-width: 170px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.form-signup-button {
+    width: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+
+/*   BUTTON RESET PWD*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
+.button-reset-pwd {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-report-login-signup-AS {
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    text-transform: none;
+    overflow: visible;
+    margin: 0;
+    touch-action: manipulation;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.form-login-forgot-password {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.forgot-password {
+    font-size: 16px;
+    color: white;
+    line-height: 1.2;
+}
+
+.forgot-password:hover {
+    color: #003f0b;
+}
+
+select {
+    text-rendering: auto;
+    color: white;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: menulist;
+    align-items: center;
+    -webkit-rtl-ordering: logical;
+    background-color: rgb(81, 97, 88, 0.8);
+    font-weight: 200;
+    cursor: default;
+    font: 400 16px Arial;
+    border-radius: 0px;
+    border: 0 !important;
+    clip: rect(0 0 0 0);
+    height: 35px;
+    overflow: hidden;
+    padding: 0;
+    width: 200px;
+    white-space: nowrap;
+}
+
+option:disabled {
+    color: rgb(197, 197, 197);
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+a {
+    margin: 0;
+    text-decoration: none;
+    background-color: transparent;
+    touch-action: manipulation;
+    color: #003f0b;
+}
+
+.btn-already {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 20px;
+}
+
+.accept-all,
+.accept-all-copy-rights,
+.accept-all-attention {
+    font-size: 13px;
+    font-weight: 200;
+    padding: 20px;
+}
+
+
+/*  -- ACCOUNT SETTINGS -- */
+
+#profileDisplay {
+    vertical-align: middle;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.fieldset-AS {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/*  --  R A P O R T  -- */
+
+#map {
+    width: 493px;
+    height: 489px;
+    position: relative;
+}
+
+.question-answer {
+    /* display: block; */
+    /* altfel le pune unele sub altele */
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.h1-report {
+    font-weight: 400;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.h4-report {
+    margin: 25px 0 5px;
+    padding-left: 47px;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.btn-block {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+/* .testbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 20px;
+} */
+
+
+/* MOBILE DEVICES */
+
+@media only screen and (max-width: 550px) {
+    .main-content {
+        width: 100%;
+    }
+    .row-space {
+        display: block;
+    }
+    .col-2 {
+        width: 100%;
+    }
+}
+
+
+/* DARK MODE */
+
+.dark-mode {
+    background-image: url("../img/logo-white.PNG");
+    background-color: #131221;
+}
+
+.dark-mode::before {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode-wrap {
+    background-color: rgba(33, 37, 41, 0.98);
+}
+
+.dark-mode-text {
+    color: #dad9de;
+}
+
+.form-login-admin-button-submit {
+    background-color: #dad9de;
+    /* Green */
+    border: none;
+    color: #131221;
+    font-size: 1.2em;
+    cursor: pointer;
+    line-height: 1.2;
+    /*padding: 0 10px;*/
+    min-width: 170px;
+    height: 50px;
+    border-radius: 5px;
+    width: 100%;
+}

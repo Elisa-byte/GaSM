@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap');
+
+/* UTIL */
+
+.centering-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.delete_user,
+.delete_campaign {
+    cursor: pointer;
+    color: crimson;
+}
+
+.load-more:hover {
+    cursor: pointer;
+}
+
+.center-text {
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+
+.tmp {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.campaign-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5em 0;
+    flex-wrap: wrap-reverse;
+}
+
+.campaign-details>* {
+    margin: 5em 2em;
+}
+
+.contact-details {
+    background-color: #313438;
+    color: #dfe2e6;
+}
+
+.max-width {
+    max-width: 100%;
+}
+
+.contact-details * {
+    padding: 2em 4em;
+}
+
+#table-container {
+    border: 1em solid #313438;
+}
+
+.shadow-button {
+    background-color: #34905c;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 0.5em 1.2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.campaign-info {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.campaign-info td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.campaign-info>tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.divider {
+    height: 1px;
+    background: black;
+    border: none;
+    outline: none;
+    position: relative;
+    width: 50%;
+    margin: 1em auto !important;
+}
+
+.button-clear {
+    color: inherit;
+    background-color: white;
+    border: 2px solid #34905c;
+    font-weight: 600;
+}
+
+
+/* Shanti -  new added part */
+
+.download-buttons {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5em !important;
+}
+
+
+/* TOP NAVIGATION */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    color: black;
+    margin: 0;
+    font-family: 'IBM Plex Serif', serif;
+    overflow-x: hidden;
+}
+
+.top-bar {
+    display: flex;
+    background-color: #330501;
+    justify-content: flex-end;
+    color: white;
+}
+
+#top-bar__logo {
+    height: 4.5em;
+    margin: 0;
+}
+
+.top-nav__link {
+    display: inline-block;
+    font-size: 1.3em;
+    padding: 0.5em;
+    transition: 0.5s;
+    border-radius: 0.2em;
+}
+
+.top-nav__link:hover {
+    background-color: rgb(204, 154, 108);
+}
+
+.top-nav__login input {
+    border-radius: 1em;
+    border: 1px solid rgb(100, 100, 100);
+    margin: 0.1em;
+    padding: 0.2em;
+}
+
+.top-nav {
+    padding: 0;
+    margin-left: auto;
+    height: 100%;
+    margin-right: 1em;
+}
+
+.user-profile {
+    display: flex;
+    width: 5em;
+    height: 5em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 100%;
+    box-sizing: content-box;
+}
+
+.user-profile * {
+    box-sizing: content-box;
+}
+
+.user-profile label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    z-index: 3;
+}
+
+.user-profile #profile-button:hover {
+    transform: rotate(360deg);
+}
+
+#overlay-checkbox {
+    display: none;
+}
+
+#overlay-menu {
+    display: none;
+}
+
+.top-nav--overlayed {
+    border: 1px solid black;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+.top-nav__link--overlayed:hover {
+    color: #DE885B;
+}
+
+.top-nav__link--overlayed {
+    padding: 1%;
+    font-size: 1.5em;
+}
+
+.user-options {
+    list-style-type: none;
+    position: absolute;
+    width: 150%;
+    text-align: center;
+    height: auto;
+    /* border: 2px solid black; */
+    top: 100%;
+    right: 0;
+    margin: 0;
+    display: none;
+    opacity: 0;
+    padding-left: 0;
+    padding-right: 2em;
+    background-color: rgb(63, 13, 13);
+    color: rgb(255, 221, 193);
+    z-index: 2;
+}
+
+.user-options:hover {
+    display: block;
+    opacity: 1;
+}
+
+.user-profile label:hover+.user-options {
+    opacity: 1;
+    display: block;
+    animation: opacity 700ms ease-in-out normal;
+}
+
+.user__option {
+    width: 100%;
+    padding: 1em;
+    left: 0;
+}
+
+.user__option:hover {
+    background-color: rgb(63, 38, 38);
+}
+
+.user__option--loggedout {
+    display: none;
+}
+
+#arrowup {
+    width: 0;
+    height: 0;
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.5em solid rgb(63, 13, 13);
+    margin-left: 80%;
+    position: absolute;
+    top: -0.5em;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* HOME CONTENT */
+
+.main-content {
+    width: 75%;
+    margin: 5em auto 1em;
+    position: relative;
+}
+
+.main-content>* {
+    margin: 2.5em 0 2.5em 0;
+}
+
+#home-intro {
+    display: flex;
+    align-items: center;
+    text-align: justify;
+}
+
+#home-intro__image {
+    width: 40%;
+    /* min-width: 540px;
+    max-height: 180px; */
+}
+
+#home-qa>* {
+    display: flex;
+    align-items: center;
+}
+
+#home-qa> :nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.home-qa__image {
+    margin: 1em;
+}
+
+.campanie__preview * {
+    /* border: 1px solid black; */
+    opacity: 0;
+    transition: 0.23s ease-in;
+    z-index: 1;
+}
+
+.campanie__preview a {
+    color: rgb(175, 210, 255);
+    text-decoration: underline;
+}
+
+.campanie__preview:hover * {
+    opacity: 1;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.473);
+    z-index: 0;
+}
+
+#campaigns-preview {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section-title {
+    width: 100%;
+    text-align: center;
+}
+
+.campanie__preview {
+    position: relative;
+    width: 40%;
+    /* background-image: url("../img/campanie1.jpg"); */
+    /* background-size: 100% auto; */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 5em 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    height: 20em;
+    color: white;
+    text-align: center;
+}
+
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #420601;
+    color: white;
+    padding: 1em 0 1em 0;
+}
+
+#mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+
+/* MOBILE DEVICES */
+
+@media only screen and (max-width: 1182px) {
+    .main-content {
+        width: 90%;
+    }
+    .top-nav,
+    .top-nav__login,
+    #profile-button {
+        display: none;
+    }
+    .top-bar {
+        justify-content: space-between;
+    }
+    #mobile-menu {
+        display: inherit;
+    }
+    #overlay-menu {
+        height: 100vh;
+        width: 100vw;
+        background: #420601;
+        z-index: 2;
+        visibility: hidden;
+        position: fixed;
+        display: inherit;
+    }
+    #overlay-checkbox:checked~#overlay-menu {
+        visibility: visible;
+        animation: opacity 200ms ease-in-out normal;
+    }
+    #mobile-menu:hover {
+        transform: rotate(90deg);
+    }
+}
+
+@media only screen and (max-width:903px) {
+    #home-intro {
+        flex-direction: column;
+    }
+    #home-intro>div>h1 {
+        text-align: center;
+    }
+    #home-intro__image {
+        width: 100%;
+    }
+    #home-qa>* {
+        text-align: justify !important;
+    }
+    .home-qa__image {
+        display: none;
+    }
+    #campaigns-preview {
+        flex-direction: column;
+    }
+    .campanie__preview {
+        width: 70%;
+        /* background-size: auto 100%; */
+    }
+    .tmp {
+        display: block;
+    }
+    .tmp * {
+        width: 100%;
+    }
+}
