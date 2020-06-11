@@ -168,8 +168,7 @@
             </div>
             <div class="accept-all" data-validate="accept-all">
                 <label class="accept-all-attention">Prin apasarea butonul "Inregistrati-va", sunteti
-                    de acord cu crearea unui cont GaSM si sunteti de acord cu <a class="termeni-conditii" href="#">Termeni si conditii</a> si
-                    <a class="politica-de-confidentialitate" href="#">Politica de confidentialitate</a></label>
+                    de acord cu crearea unui cont GaSM si sunteti de acord cu <a class="termeni-conditii" href="home/termeni">Termeni si conditii si Politica de confidentialitate</a></label>
                 <p class="accept-all-copy-rights">&copy; 2020 GaSM.com</p>
 
                 <a href="home" class="form-back"> << Inapoi Acasa</a>

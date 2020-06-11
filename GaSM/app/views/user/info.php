@@ -7,7 +7,6 @@
     <title>Info</title>
     <base href = "<?php echo $base_location ?>" />
     <link rel="stylesheet" href="public/stylesheets/styles.css">
-
     <script src="https://use.fontawesome.com/9366a1d005.js"></script>
     <script src="public/JavaScript/disableScroll.js"></script>
 </head>
