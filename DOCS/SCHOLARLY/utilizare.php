@@ -174,7 +174,7 @@
             Dupa logare, utilizatorului i se va atribui dreptul de a trimite un raport catre noi. Informatiile
             referitoare la tipul de gunoi vazut, cantitatea care este depozitata ilegal,
             localitatea, judetul, data sunt necesare pentru investigatiile urmatoare. Preluand aceste date, pagina de
-            statistici va genera statistici pe zi, luna, an. Rapoartele vor ajunge la sisteme de salubrizare.
+            statistici va genera statistici pe zi, saptamana, luna. Rapoartele vor ajunge la sisteme de salubrizare.
         </p>
         <p><img src="../images/raportarezona.png" alt="raportare zona"</p>
         <p>
@@ -194,7 +194,7 @@
     </section>
     <section id="campanii">
         <h3><span>4.3 </span> Campanii</h3>
-        <!--    SHANTI COMPLETARE-->
+        <!--    TEO COMPLETARE-->
         <p>
 
         </p>
@@ -203,7 +203,10 @@
         <h3><span>4.4 </span> Creare campanie</h3>
         <!--    SHANTI COMPLETARE-->
         <p>
-
+            Dupa logare,utilizatorul are dreptul si posibilitatea sa creeaza el insusi o campanie.
+            Astfel,el poate sa organizeze o campanie de tip meeting,strangere de fonduri sau mesaj.Dupa ce completeaza cu atentie campurile 
+            formularului de creare a unei campanii,utilizatorul poate sa vizualizeze informatiile pe care le-a introdus.
+            Campaniile create sunt inregistrate in baza de date si pot fi accesate la rubrica Campanii.
         </p>
     </section>
 </section>

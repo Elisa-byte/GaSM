@@ -592,7 +592,7 @@
         <h4><span>3.2.1 </span>Logare User</h4>
         <p>
             Logarea funcționează prin oferirea din partea utilizatorului a credențialelor folosite la register (email/username, parola).
-            Dacă email-ul și parola sunt introduce corect, utilizatorul va fi atentionat printr-un mesaj de eroare.
+            Dacă email-ul și parola sunt introduse incorect, utilizatorul va fi atentionat printr-un mesaj de eroare.
             Validări ale formularului pentru logare:
         </p><ul>
             <li>Daca unul dintre cele doua campuri nu sunt completate, utilizatorul va fi atentionat printr-un mesaj de eroare. </li>
@@ -606,7 +606,7 @@
             <h4><span>3.2.2 </span>Logare Admin</h4>
             <p>
                 Logarea pentru administrator este putin diferita, acesta nu trebuie sa isi creeze singur un cont, ci va primi unul de la cei care se ocupa de baza de date.
-                Dacă email-ul și parola sunt introduce corect, administratorul va fi atentionat printr-un mesaj de eroare.
+                Dacă email-ul și parola nu sunt introduce corect, administratorul va fi atentionat printr-un mesaj de eroare.
 
                 Aici intervin o serie de validări:
             </p><ul>
@@ -685,6 +685,10 @@
             <h3><span>3.6.1 </span>Creare campanie</h3>
             <!--        TEO N SHANTI COMPLETARE-->
             <p>
+                Si acesata parte a proiectului ales poate fi eccesata doar de catre utilizatorii logati.
+                Formularul prin care poate fi creata o campanie impune completarea unor campuri(numele campaniei,descrierea campaniei,tipul campaniei,categoria de persoane careia ii este destinata campania,
+                datele de contact-numarul de telefon si email-ul),dar are si campuri care nu sunt obligatorii(de exemplu poza reprezentativa pentru campanie,data si ora evenimentului).
+                Dupa ce informatiile sunt completate,datele sunt extrase si introduse in baza de date.Ulterior,acesta campanie apare la rubrica Campanii si poate fi vizualizata.
             </p>
         </section>
     </section>
@@ -882,14 +886,13 @@
     <section id="evolutie-shanti">
         <h3><span>6.2 </span>Evolutie Shanti</h3>
         <ul>
-            <li>Am implementat structura MVC urmarind tutorialul recomandat la laborator</li>
             <li> </li>
             <li> </li>
             <li> </li>
+            <li>Am implementat structura MVC urmarind tutorialul recomandat la laborator.</li>
+            <li>Am inteles cum functioneaza MVC, dupa care l-am adaptat la cerintele proiectului nostru, lucru pe care l-au facut si colegii mei.</li>
+            <li>Am adaugat functionalitatea de generare raport(csv,html sau pdf) conform statisticilor cerute.</li>
             <li> </li>
-            <li> </li>
-            <li> </li>
-            <li></li>
             <li> </li>
             <li> </li>
 
@@ -902,7 +905,7 @@
             <li></li>
             <li></li>
             <li>Am implementat design pattern-ul MVC urmand un tutorial de pe YouTube pentru a intelege mai bine viitoarea structura a proiectului, acesta a fost primul pas in programarea php.</li>
-            <li>Am inteles cum functioneaza MVC, dupa care l-am adaptat la cerintele proiectului nostru, lucru pe care l-a facut si colegii mei.</li>
+            <li>Am inteles cum functioneaza MVC, dupa care l-am adaptat la cerintele proiectului nostru, lucru pe care l-au facut si colegii mei.</li>
             <li>Am adaugat functionalitate paginilor html, adica nu mai erau statice, ci se actualizau in dependenta de cartea accesata.</li>
             <li></li>
             <li></li>
