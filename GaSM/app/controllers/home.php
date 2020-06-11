@@ -161,7 +161,7 @@ class Home extends Controller
         }
         if (isset($_SESSION["userId"])) {
             unset($_SESSION["userId"]);
-            $this->view('user/info', ['message' => 'Ați for deautentificat!']);
+            $this->view('user/info', ['message' => 'Ați fost deautentificat!']);
         } else {
             $this->view('user/info', ['message' => 'Nu sunteți logat pentru a vă putea deautentifica. Apăsați <a href="home/login" style="color: #32b7f0">aici</a> dacă doriți să vă logați!']);
         }

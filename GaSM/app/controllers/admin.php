@@ -162,7 +162,20 @@ class Admin extends Controller
     public function addUser() {
         if (isset($_POST['add-user-submit'])) {
 
+
             require_once "app/config/dbh.inc.php";
+
+            $rowperpage = 4;
+            // counting total number of posts
+            $allcount_query = "SELECT count(*) as allcount FROM campanii";
+            $allcount_result = mysqli_query($conn, $allcount_query);
+            $allcount_fetch = mysqli_fetch_array($allcount_result);
+            $allcount = $allcount_fetch['allcount'];
+
+            $query = mysqli_query($conn, "SELECT * FROM gasm.admin ORDER BY idAdmin ASC");
+
+            $toPass = array($rowperpage, 0);
+            $latestCampaigns = $this->model('Campanii', $toPass);
             //declararea tuturor variabilelor din signup
 
             $fname = $_POST['fname'];
@@ -179,40 +192,40 @@ class Admin extends Controller
 
             if (empty($fname) || empty($lname) || empty($phone) || empty($mail) || empty($username) || empty($password) || empty($passwordRepeat) || empty($category) || empty($location)) {
                 // header("Location: ../signup.php?error=emptyfields&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'emptyfields']);
+                $this->view('admin/index', ['error' => 'emptyfields','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } //"/^[A-Za-z]+$/u ")
             else if (!preg_match("/^[A-Za-z]+$/", $fname)) {
                 // header("Location: ../signup.php?error=invalidfname&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidfname']);
+                $this->view('admin/index', ['error' => 'invalidfname','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!preg_match("/^[A-Za-z]+$/", $lname)) {
                 // header("Location: ../signup.php?error=invalidlname&fname=".$fname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidlname']);
+                $this->view('admin/index', ['error' => 'invalidlname','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!preg_match("/^(\+4|)?(07[0-8]{1}[0-9]{1}|02[0-9]{2}|03[0-9]{2}){1}?(\s|\.|\-)?([0-9]{3}(\s|\.|\-|)){2}$/", $phone)) {
                 // header("Location: ../signup.php?error=invalidphone&fname=".$fname."&lname=".$lname."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidphone']);
+                $this->view('admin/index', ['error' => 'invalidphone','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
                 // header("Location: ../signup.php?error=invalidmail&fname=".$fname."&lname=".$lname."&phone=".$phone."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidmail']);
+                $this->view('admin/index', ['error' => 'invalidmail','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/.{8,25}/")))) {
                 // header("Location: ../signup.php?error=invalidpwd&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidpwd']);
+                $this->view('admin/index', ['error' => 'invalidpwd','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
                 // header("Location: ../signup.php?error=invalidusername&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidusername']);
+                $this->view('admin/index', ['error' => 'invalidusername','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (strlen(trim($_POST["password"])) < 8) {
                 // header("Location: ../signup.php?error=pwdTooSmall&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'pwdTooSmall']);
+                $this->view('admin/index', ['error' => 'pwdTooSmall','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if ($password !== $passwordRepeat) {
                 // header("Location: ../signup.php?error=passwordCheck&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'passwordCheck']);
+                $this->view('admin/index', ['error' => 'passwordCheck','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else {
                 $sql = "SELECT uidUsers FROM gasm.usersv2 WHERE uidUsers=?;";
@@ -220,7 +233,7 @@ class Admin extends Controller
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     // header("Location: ../signup.php?error=sqlerror");
-                    $this->view('admin/index', ['error' => 'sqlerror']);
+                    $this->view('admin/index', ['error' => 'sqlerror','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                     exit();
                 } else {
                     mysqli_stmt_bind_param($stmt, "s", $username);
@@ -229,7 +242,7 @@ class Admin extends Controller
                     $resultCheck = mysqli_stmt_num_rows($stmt);
                     if ($resultCheck > 0) {
                         // header("Location: ../signup.php?error=usertaken&mail=".$mail);//nu am mai pus toate datele
-                        $this->view('admin/index', ['error' => 'usertaken']);
+                        $this->view('admin/index', ['error' => 'usertaken','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                         exit();
                     } else {
                         $sql = "INSERT INTO gasm.usersv2(uidUsers, fnUsers, lnUsers, emailUsers, pwdUsers, phnUsers, categoryUsers, locationUsers) VALUES (?,?,?,?,?,?,?,?);";
@@ -250,7 +263,8 @@ class Admin extends Controller
                             mysqli_stmt_execute($stmt);
                             mysqli_stmt_store_result($stmt);
                             // header("Location: ../login.php");
-                            $this->view('admin/index', '');
+                            
+                            $this->view('admin/index', ['allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                             exit();
                         }
                     }
@@ -260,7 +274,7 @@ class Admin extends Controller
             mysqli_close($conn);
         } else {
             // header("Location: ../signup.php");
-            $this->view('admin/index', '');
+            $this->view('admin/index', ['allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
             exit();
         }
     }
@@ -269,6 +283,18 @@ class Admin extends Controller
         if (isset($_POST['add-admin-submit'])) {
 
             require_once "app/config/dbh.inc.php";
+
+            $rowperpage = 4;
+            // counting total number of posts
+            $allcount_query = "SELECT count(*) as allcount FROM campanii";
+            $allcount_result = mysqli_query($conn, $allcount_query);
+            $allcount_fetch = mysqli_fetch_array($allcount_result);
+            $allcount = $allcount_fetch['allcount'];
+
+            $query = mysqli_query($conn, "SELECT * FROM gasm.admin ORDER BY idAdmin ASC");
+
+            $toPass = array($rowperpage, 0);
+            $latestCampaigns = $this->model('Campanii', $toPass);
             //declararea tuturor variabilelor din signup
 
             $fname = $_POST['fname'];
@@ -283,40 +309,40 @@ class Admin extends Controller
 
             if (empty($fname) || empty($lname) || empty($phone) || empty($mail) || empty($username) || empty($password) || empty($passwordRepeat)) {
                 // header("Location: ../signup.php?error=emptyfields&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'emptyfieldsadmin']);
+                $this->view('admin/index', ['error' => 'emptyfieldsadmin','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } //"/^[A-Za-z]+$/u ")
             else if (!preg_match("/^[A-Za-z]+$/", $fname)) {
                 // header("Location: ../signup.php?error=invalidfname&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidfnameadmin']);
+                $this->view('admin/index', ['error' => 'invalidfnameadmin', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!preg_match("/^[A-Za-z]+$/", $lname)) {
                 // header("Location: ../signup.php?error=invalidlname&fname=".$fname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidlnameadmin']);
+                $this->view('admin/index', ['error' => 'invalidlnameadmin', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!preg_match("/^(\+4|)?(07[0-8]{1}[0-9]{1}|02[0-9]{2}|03[0-9]{2}){1}?(\s|\.|\-)?([0-9]{3}(\s|\.|\-|)){2}$/", $phone)) {
                 // header("Location: ../signup.php?error=invalidphone&fname=".$fname."&lname=".$lname."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidphoneadmin']);
+                $this->view('admin/index', ['error' => 'invalidphoneadmin', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
                 // header("Location: ../signup.php?error=invalidmail&fname=".$fname."&lname=".$lname."&phone=".$phone."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidmailadmin']);
+                $this->view('admin/index', ['error' => 'invalidmailadmin', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/.{8,25}/")))) {
                 // header("Location: ../signup.php?error=invalidpwd&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidpwdadmin']);
+                $this->view('admin/index', ['error' => 'invalidpwdadmin','allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
                 // header("Location: ../signup.php?error=invalidusername&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'invalidusernameadmin']);
+                $this->view('admin/index', ['error' => 'invalidusernameadmin', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if (strlen(trim($_POST["password"])) < 8) {
                 // header("Location: ../signup.php?error=pwdTooSmall&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'pwdTooSmalladmin']);
+                $this->view('admin/index', ['error' => 'pwdTooSmalladmin', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else if ($password !== $passwordRepeat) {
                 // header("Location: ../signup.php?error=passwordCheck&fname=".$fname."&lname=".$lname."&phone=".$phone."&mail=".$mail."&username=".$username."&category=".$category."&location=".$location);
-                $this->view('admin/index', ['error' => 'passwordCheckadmin']);
+                $this->view('admin/index', ['error' => 'passwordCheckadmin', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                 exit();
             } else {
                 $sql = "SELECT uidAdmin FROM gasm.admin WHERE uidAdmin=?;";
@@ -324,7 +350,7 @@ class Admin extends Controller
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     // header("Location: ../signup.php?error=sqlerror");
-                    $this->view('admin/index', ['error' => 'sqlerror']);
+                    $this->view('admin/index', ['error' => 'sqlerror', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                     exit();
                 } else {
                     mysqli_stmt_bind_param($stmt, "s", $username);
@@ -333,7 +359,7 @@ class Admin extends Controller
                     $resultCheck = mysqli_stmt_num_rows($stmt);
                     if ($resultCheck > 0) {
                         // header("Location: ../signup.php?error=usertaken&mail=".$mail);//nu am mai pus toate datele
-                        $this->view('admin/index', ['error' => 'usertaken']);
+                        $this->view('admin/index', ['error' => 'usertaken', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                         exit();
                     } else {
                         $sql = "INSERT INTO gasm.admin (uidAdmin, fnameAdmin, lnameAdmin, emailAdmin, pwdAdmin, phnAdmin) VALUES (?,?,?,?,?,?);";
@@ -354,7 +380,7 @@ class Admin extends Controller
                             mysqli_stmt_execute($stmt);
                             mysqli_stmt_store_result($stmt);
                             // header("Location: ../login.php");
-                            $this->view('admin/index', ['addadmin' => 'success']);
+                            $this->view('admin/index', ['addadmin' => 'success', 'allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
                             exit();
                         }
                     }
@@ -364,7 +390,7 @@ class Admin extends Controller
             mysqli_close($conn);
         } else {
             // header("Location: ../signup.php");
-            $this->view('admin/index', '');
+            $this->view('admin/index', ['allcount' => $allcount, 'campanii' => $latestCampaigns, 'rowperpage' => $rowperpage, 'query' => $query]);
             exit();
         }
     }

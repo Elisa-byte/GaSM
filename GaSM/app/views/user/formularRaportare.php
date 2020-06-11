@@ -471,7 +471,7 @@
                                 <input type="file" accept="image/*" name="img"
                                        class="form-upload-image" onchange="loadFile(event)"/>
                                 <label for="file" style="cursor: pointer;"
-                                       class="form-signup-button-submit">Incarcati o poza de profil</label>
+                                       class="form-signup-button-submit">Incarcati o poza</label>
                                 <img id="output" width="200"/>
                                 <script>
                                     var loadFile = function (event) {

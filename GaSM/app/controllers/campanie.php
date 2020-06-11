@@ -39,7 +39,7 @@ class Campanie extends Controller
             $html .= '<h2>' . $nume . '</h2>';
             $html .= '<div class="overlay"></div>';
             $html .= '<p>' . substr($descriere, 0, 100)  . '...</p>';
-            $html .= '<a href="campanie/id' . $id . '" >Citește mai mult...</a>';
+            $html .= '<a href="campanie/id/' . $id . '" >Citește mai mult...</a>';
             $html .= '</div>';
         }
 

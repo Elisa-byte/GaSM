@@ -45,7 +45,7 @@ $(document).ready(function() {
             setTimeout(function() {
 
                 // When row is greater than allcount then remove all class='post' element after 3 element
-                $('.campanie__preview:nth-child(3)').nextAll('.campanie__preview').remove();
+                $('.campanie__preview:nth-child(5)').nextAll('.campanie__preview').remove();
 
                 // Reset the value of row
                 $("#row").val(0);

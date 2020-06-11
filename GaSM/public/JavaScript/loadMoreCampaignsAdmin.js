@@ -45,7 +45,7 @@ $(document).ready(function() {
             setTimeout(function() {
 
                 // When row is greater than allcount then remove all class='post' element after 3 element
-                $('.checkpoint:nth-child(3)').nextAll('.checkpoint').remove();
+                $('.checkpoint:nth-child(5)').nextAll('.checkpoint').remove();
 
                 // Reset the value of row
                 $("#row").val(0);

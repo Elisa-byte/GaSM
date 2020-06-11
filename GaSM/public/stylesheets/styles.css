@@ -376,7 +376,7 @@ body {
     position: relative;
     width: 40%;
     /* background-image: url("../img/campanie1.jpg"); */
-    /* background-size: 100% auto; */
+    background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
     margin: 5em 0 0 0;

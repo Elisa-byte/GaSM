@@ -17,8 +17,8 @@
 
   <?php require_once 'app/views/includes/topnav.php' ?> 
 
-    <main class="main-content" id="main-cont">
-        <p class="center-text" style="height: 70vh;font-weight: 700; font-size: 2em;"><?php echo $data['message']; ?></p>
+    <main class="main-content" id="main-cont" style="height: 80vh; display: flex; justify-content: center; align-items: center;">
+        <p class="center-text" style="font-weight: 700; font-size: 2em;"><?php echo $data['message']; ?></p>
     </main>
 
  <?php require_once 'app/views/includes/footer.php'?>

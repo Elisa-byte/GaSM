@@ -218,11 +218,8 @@
                 }
             }
             ?>
-            <h3>Adaugă un administrator</h3>
 
-            <form class="form-signup" method="POST" action="admin/addAdmin">
-
-                <div class="postList">
+<div class="postList">
                     <table class='campaign-info'>
                         <tr>
                             <td>Nume</td>
@@ -246,6 +243,11 @@
                         <?php } ?>
                     </table>
                 </div>
+            <h3>Adaugă un administrator</h3>
+
+            <form class="form-signup" method="POST" action="admin/addAdmin">
+
+                
                 <div class="row row-space">
                     <div class="col-2">
                         <div class="group">
